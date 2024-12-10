@@ -2,64 +2,94 @@ import {
   SiReact,
   SiNextdotjs,
   SiTypescript,
-  SiJavascript,
   SiTailwindcss,
   SiNodedotjs,
   SiMongodb,
-  SiVuedotjs,
-  SiGraphql,
+  SiLua,
+  SiRoblox,
+  SiPython,
+  SiCplusplus,
 } from "react-icons/si";
 
-// 技術圖標映射及其顏色
+// 按類別分組的技術棧
 export const TECH_ICONS = {
+  // 主要技術
   React: {
     Icon: SiReact,
-    color: "#61DAFB", // React 藍
+    color: "#149ECA",
   },
   "Next.js": {
     Icon: SiNextdotjs,
-    color: "#000000", // Next.js 黑
+    color: "#FFFFFF",
   },
   TypeScript: {
     Icon: SiTypescript,
-    color: "#3178C6", // TypeScript 藍
-  },
-  JavaScript: {
-    Icon: SiJavascript,
-    color: "#F7DF1E", // JavaScript 黃
+    color: "#007ACC",
   },
   Tailwind: {
     Icon: SiTailwindcss,
-    color: "#06B6D4", // Tailwind 青
+    color: "#38BDF8",
   },
+
+  // 後端技術
   "Node.js": {
     Icon: SiNodedotjs,
-    color: "#339933", // Node.js 綠
+    color: "#539E43",
   },
   MongoDB: {
     Icon: SiMongodb,
-    color: "#47A248", // MongoDB 綠
+    color: "#00ED64",
   },
-  "Vue.js": {
-    Icon: SiVuedotjs,
-    color: "#4FC08D", // Vue.js 綠
+
+  // 遊戲開發
+  Lua: {
+    Icon: SiLua,
+    color: "#2C2D72",
   },
-  GraphQL: {
-    Icon: SiGraphql,
-    color: "#E10098", // GraphQL 粉
+  Roblox: {
+    Icon: SiRoblox,
+    color: "#FF0000",
+  },
+
+  // 其他語言
+  Python: {
+    Icon: SiPython,
+    color: "#FFD43B",
+  },
+  "C++": {
+    Icon: SiCplusplus,
+    color: "#659AD2",
   },
 } as const;
 
-// 獲取技術圖標的函數
 export const getTechIcon = (tech: keyof typeof TECH_ICONS) => {
   const iconData = TECH_ICONS[tech];
   if (!iconData) return <span>{tech[0]}</span>;
-
-  const { Icon, color } = iconData;
-  return (
-    <Icon
-      className="size-4 transition-colors dark:text-neutral-200"
-      style={{ color: `var(--icon-color, ${color})` }}
-    />
-  );
+  const { Icon, className } = iconData;
+  return <Icon className={`size-4 ${className}`} />;
 };
+
+// 分組顯示的技術棧
+export const techGroups = [
+  {
+    title: "Frontend",
+    icons: ["React", "Next.js", "TypeScript", "Tailwind"],
+  },
+  {
+    title: "Backend",
+    icons: ["Node.js", "MongoDB"],
+  },
+  {
+    title: "Game Dev",
+    icons: ["Lua", "Roblox"],
+  },
+  {
+    title: "Other",
+    icons: ["Python", "C++"],
+  },
+] as const;
+
+export const techIcons = Object.entries(TECH_ICONS).map(([name, { Icon }]) => ({
+  name,
+  icon: Icon,
+}));
