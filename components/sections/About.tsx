@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Code2, Laptop, Lightbulb, Rocket } from "lucide-react";
-import { techGroups, TECH_ICONS } from "@/constants/tech-icons";
+import { TECH_ICONS } from "@/constants/tech-icons";
+import { techGroups } from "@/constants";
 
 export default function About() {
   const features = [
@@ -72,7 +73,7 @@ export default function About() {
             className="group relative rounded-2xl bg-neutral-100 p-6 dark:bg-neutral-900"
           >
             <div className="mb-4 inline-block rounded-lg bg-neutral-200 p-3 dark:bg-neutral-800">
-              <feature.icon className="size-6 text-neutral-700 dark:text-neutral-300" />
+              <feature.icon className="size-6" />
             </div>
             <h3 className="mb-2 text-lg font-semibold text-neutral-950 dark:text-neutral-50">
               {feature.title}
@@ -115,7 +116,13 @@ export default function About() {
                       className="group flex flex-col items-center gap-2"
                     >
                       <div className="rounded-lg p-3 transition-colors group-hover:bg-neutral-800/50">
-                        <tech.Icon style={{ width: "2rem", height: "2rem" }} />
+                        <tech.Icon
+                          style={{
+                            width: "2rem",
+                            height: "2rem",
+                          }}
+                          className="text-neutral-700 dark:text-neutral-300"
+                        />
                       </div>
                       <span className="text-sm text-neutral-700 dark:text-neutral-300">
                         {techName}

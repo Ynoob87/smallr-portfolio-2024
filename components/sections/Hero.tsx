@@ -9,7 +9,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { siteConfig } from "@/constants/site";
+import { siteConfig } from "@/constants";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Image from "next/image";
 

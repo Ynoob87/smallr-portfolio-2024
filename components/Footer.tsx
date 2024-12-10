@@ -1,5 +1,5 @@
 import { Github, Mail, Linkedin } from "lucide-react";
-import { siteConfig } from "@/constants/site";
+import { siteConfig } from "@/constants";
 
 export default function Footer() {
   return (

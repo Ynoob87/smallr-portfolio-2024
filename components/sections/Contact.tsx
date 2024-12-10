@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MessageSquare, Send, User } from "lucide-react";
-import { siteConfig } from "@/constants/site";
+import { siteConfig } from "@/constants";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
