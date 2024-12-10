@@ -8,8 +8,8 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Tailwind"],
     image: "/avatar.jpg",
     links: {
-      demo: "https://your-portfolio.com",
-      github: "https://github.com/yourusername/portfolio",
+      demo: "#",
+      github: "#",
     },
   },
   {
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     tags: ["Vue.js", "GraphQL", "Tailwind"],
     image: "/avatar.jpg",
     links: {
-      demo: "https://demo-project.com",
+      demo: "#",
     },
   },
 ];
