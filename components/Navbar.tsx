@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,95 +8,110 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { navigation } from "@/constants/navigation";
 
-const Navbar = () => {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 bg-background-light/60 backdrop-blur-xl dark:bg-background-dark/60">
-      <div className="mx-auto max-w-4xl px-4">
-        <div className="flex h-16 items-center justify-between">
+    <header className="fixed left-0 right-0 top-0 z-50">
+      <div className="relative">
+        {/* 主導航欄 */}
+        <nav className="mx-auto flex h-16 max-w-4xl items-center justify-between px-6">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold relative group">
-            <span>Small R</span>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark transition-all group-hover:w-full" />
+          <Link
+            href="/"
+            className="text-lg font-medium tracking-wide text-neutral-950 dark:text-neutral-50"
+          >
+            Small R
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          {/* 桌面導航 */}
+          <div className="hidden items-center gap-6 md:flex">
             {navigation.map((item) => (
-              <Link key={item.name} href={item.href} className="relative group">
-                <span
-                  className={`transition-colors ${
-                    pathname === item.href
-                      ? "text-primary-light dark:text-primary-dark"
-                      : "text-text-light dark:text-text-dark"
-                  }`}
-                >
-                  {item.name}
-                </span>
-                <span
-                  className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all group-hover:w-full ${
-                    pathname === item.href
-                      ? "w-full bg-primary-light dark:bg-primary-dark"
-                      : "bg-text-light dark:bg-text-dark"
-                  }`}
-                />
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`relative px-2 py-1 text-sm font-medium tracking-wide transition-colors ${
+                  pathname === item.href
+                    ? "text-neutral-950 dark:text-neutral-50"
+                    : "text-neutral-800 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-neutral-50"
+                }`}
+              >
+                {item.name}
+                {pathname === item.href && (
+                  <motion.div
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-neutral-950 dark:bg-neutral-50"
+                    layoutId="navbar-underline"
+                    transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
+                  />
+                )}
               </Link>
             ))}
             <ThemeToggle />
           </div>
 
-          {/* Mobile Navigation Button */}
-          <div className="flex items-center md:hidden">
+          {/* 移動端按鈕 */}
+          <div className="flex items-center gap-4 md:hidden">
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="ml-4 p-2 rounded-full hover:bg-accent-light/10 dark:hover:bg-accent-dark/10 transition-colors"
+              className="rounded-md p-1.5 text-neutral-800 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-neutral-50"
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
           </div>
-        </div>
+        </nav>
+
+        {/* 背景 */}
+        <div
+          className={`absolute inset-0 -z-10 transition-colors duration-300 ${
+            isScrolled
+              ? "bg-neutral-50/80 backdrop-blur supports-[backdrop-filter]:bg-neutral-50/60 dark:bg-neutral-950/80 dark:supports-[backdrop-filter]:bg-neutral-950/60"
+              : "bg-transparent"
+          }`}
+        />
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* 移動端選單 */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="absolute w-full bg-background-light/80 backdrop-blur-xl dark:bg-background-dark/80 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="border-t border-neutral-200 bg-neutral-50/80 backdrop-blur supports-[backdrop-filter]:bg-neutral-50/60 dark:border-neutral-800 dark:bg-neutral-950/80 dark:supports-[backdrop-filter]:bg-neutral-950/60 md:hidden"
           >
-            <div className="space-y-1 px-4 py-4">
-              {navigation.map((item) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
+            <nav className="mx-auto max-w-4xl px-6 py-4">
+              <div className="flex flex-col space-y-1">
+                {navigation.map((item) => (
                   <Link
+                    key={item.name}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block py-3 px-4 rounded-lg transition-all hover:bg-accent-light/10 dark:hover:bg-accent-dark/10 ${
+                    className={`rounded-md px-3 py-2 text-sm font-medium tracking-wide transition-colors ${
                       pathname === item.href
-                        ? "text-primary-light bg-accent-light/5 dark:text-primary-dark dark:bg-accent-dark/5"
-                        : "text-text-light dark:text-text-dark"
+                        ? "bg-neutral-200/50 text-neutral-950 dark:bg-neutral-800/50 dark:text-neutral-50"
+                        : "text-neutral-800 hover:bg-neutral-200/50 hover:text-neutral-950 dark:text-neutral-300 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-50"
                     }`}
                   >
                     {item.name}
                   </Link>
-                </motion.div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}
