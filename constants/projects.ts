@@ -6,10 +6,10 @@ export const projects: Project[] = [
     description:
       "A modern portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features dark mode, smooth animations, and responsive design.",
     tags: ["Next.js", "TypeScript", "Tailwind"],
-    image: "/avatar.jpg",
+    image: "/projects/Project-1.png",
     links: {
       demo: "#",
-      github: "#",
+      // github: "#",
     },
   },
   {

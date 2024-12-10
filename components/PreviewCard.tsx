@@ -24,6 +24,7 @@ export default function PreviewCard({
   className = "",
 }: PreviewCardProps) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleModalClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -67,14 +68,29 @@ export default function PreviewCard({
               {title}
             </h2>
             {description && (
-              <p className="line-clamp-2 text-sm text-neutral-600 dark:text-neutral-400">
-                {description}
-              </p>
+              <div className="relative">
+                <p
+                  className={`text-sm text-neutral-600 transition-all duration-200 dark:text-neutral-400 ${
+                    isExpanded ? "" : "line-clamp-2"
+                  }`}
+                >
+                  {description}
+                </p>
+                {description.length > 100 && (
+                  <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="mt-1 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                  >
+                    {isExpanded ? "show less" : "show more"}
+                  </button>
+                )}
+              </div>
             )}
           </div>
 
           {/* 底部工具列 */}
           <div className="flex items-center justify-between">
+            {/* 技術堆疊 */}
             <div className="flex -space-x-2">
               {techStack.map((tech, index) => (
                 <div
@@ -87,6 +103,7 @@ export default function PreviewCard({
               ))}
             </div>
 
+            {/* 操作按鈕 */}
             <div className="flex gap-2">
               {actions.map((action, index) => (
                 <Link
@@ -138,11 +155,11 @@ export default function PreviewCard({
             className="relative flex flex-1 items-center justify-center p-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative size-full max-w-5xl">
+            <div className="relative size-full max-w-5xl rounded-sm">
               <Image
                 src={imageSrc}
                 alt={imageAlt}
-                className="object-contain"
+                className="rounded-sm object-contain"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                 priority
