@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Code2, Laptop, Lightbulb, Rocket } from "lucide-react";
-import { TECH_ICONS } from "@/constants/tech-icons";
+
 import { techGroups } from "@/constants";
+import { TECH_ICONS } from "@/constants/tech-icons";
 
 export default function About() {
   const features = [
@@ -67,7 +68,7 @@ export default function About() {
         transition={{ delay: 0.2 }}
         className="mb-16 grid gap-8 md:grid-cols-2"
       >
-        {features.map((feature, index) => (
+        {features.map((feature) => (
           <div
             key={feature.title}
             className="group relative rounded-2xl bg-neutral-100 p-6 dark:bg-neutral-900"

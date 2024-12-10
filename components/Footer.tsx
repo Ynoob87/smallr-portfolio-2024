@@ -1,4 +1,5 @@
 import { Github, Mail, Linkedin } from "lucide-react";
+
 import { siteConfig } from "@/constants";
 
 export default function Footer() {
@@ -14,7 +15,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-secondary-light transition-colors hover:text-text-light dark:text-secondary-dark dark:hover:text-text-dark"
             >
-              <Github className="h-5 w-5" />
+              <Github className="size-5" />
               <span className="sr-only">Github</span>
             </a>
             <a
@@ -23,14 +24,14 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-secondary-light transition-colors hover:text-text-light dark:text-secondary-dark dark:hover:text-text-dark"
             >
-              <Linkedin className="h-5 w-5" />
+              <Linkedin className="size-5" />
               <span className="sr-only">LinkedIn</span>
             </a>
             <a
               href={`mailto:${siteConfig.links.email}`}
               className="text-secondary-light transition-colors hover:text-text-light dark:text-secondary-dark dark:hover:text-text-dark"
             >
-              <Mail className="h-5 w-5" />
+              <Mail className="size-5" />
               <span className="sr-only">Email</span>
             </a>
           </div>

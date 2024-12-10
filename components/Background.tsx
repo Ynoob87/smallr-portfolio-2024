@@ -12,14 +12,14 @@ export default function Background() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed inset-0 -z-10 h-full w-full overflow-hidden">
-      <div className="relative h-full w-full bg-white dark:bg-black">
+    <div className="fixed inset-0 -z-10 size-full overflow-hidden">
+      <div className="relative size-full bg-white dark:bg-black">
         {/* 主網格 */}
         <div
           className="absolute inset-0 
           bg-[linear-gradient(rgba(0,0,0,0.07)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(0,0,0,0.07)_1.5px,transparent_1.5px)] 
-          dark:bg-[linear-gradient(rgba(255,255,255,0.07)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(255,255,255,0.07)_1.5px,transparent_1.5px)] 
-          bg-[size:32px_32px]"
+          bg-[size:32px_32px] 
+          dark:bg-[linear-gradient(rgba(255,255,255,0.07)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(255,255,255,0.07)_1.5px,transparent_1.5px)]"
         />
 
         {/* 背景漸層 */}

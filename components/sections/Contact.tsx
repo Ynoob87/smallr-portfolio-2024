@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MessageSquare, Send, User } from "lucide-react";
+import { useState } from "react";
+
 import { siteConfig } from "@/constants";
 
 export default function Contact() {
@@ -85,14 +86,14 @@ export default function Contact() {
       >
         {submitted ? (
           <div className="p-8 text-center">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
+            <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
               <Send className="size-5 text-green-600 dark:text-green-300" />
             </div>
             <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
               Thanks for reaching out!
             </h3>
             <p className="mt-2 text-neutral-700 dark:text-neutral-300">
-              I'll get back to you as soon as possible.
+              {"I'll"} get back to you as soon as possible.
             </p>
           </div>
         ) : (
@@ -174,7 +175,7 @@ export default function Contact() {
                 >
                   {isSubmitting ? (
                     <>
-                      <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-neutral-50 border-t-transparent dark:border-neutral-900 dark:border-t-transparent" />
+                      <span className="inline-block size-4 animate-spin rounded-full border-2 border-neutral-50 border-t-transparent dark:border-neutral-900 dark:border-t-transparent" />
                       Sending...
                     </>
                   ) : (

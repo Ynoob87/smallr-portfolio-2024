@@ -138,7 +138,7 @@ export default function PreviewCard({
             className="relative flex flex-1 items-center justify-center p-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative h-full w-full max-w-5xl">
+            <div className="relative size-full max-w-5xl">
               <Image
                 src={imageSrc}
                 alt={imageAlt}

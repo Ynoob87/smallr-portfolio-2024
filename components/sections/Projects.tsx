@@ -1,8 +1,9 @@
 import { Github, Globe } from "lucide-react";
-import { Project } from "@/types";
+
+import PreviewCard from "@/components/PreviewCard";
 import { projects } from "@/constants/projects";
 import { getTechIcon, TECH_ICONS } from "@/constants/tech-icons";
-import PreviewCard from "@/components/PreviewCard";
+import { Project } from "@/types";
 
 export default function Projects() {
   return (

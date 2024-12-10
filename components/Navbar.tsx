@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
 import { navigation } from "@/constants/navigation";
+
+import ThemeToggle from "./ThemeToggle";
 
 // 桌面版導航組件
 const DesktopNav = ({ pathname }: { pathname: string }) => (
@@ -14,7 +16,7 @@ const DesktopNav = ({ pathname }: { pathname: string }) => (
     <div className="absolute inset-0 bg-white/70 dark:bg-black/70" />
     <nav className="relative mx-auto flex h-16 max-w-4xl items-center justify-between px-6">
       <Link
-        href="/"
+        href="#"
         className="text-lg font-medium tracking-wide text-neutral-950 dark:text-neutral-50"
       >
         Small R
@@ -37,7 +39,7 @@ const DesktopNav = ({ pathname }: { pathname: string }) => (
               {item.name}
             </span>
             <span
-              className={`absolute -bottom-1 left-0 right-0 h-px transition-all duration-300 ${
+              className={`absolute inset-x-0 -bottom-1 h-px transition-all duration-300 ${
                 pathname === item.href
                   ? "bg-neutral-950 dark:bg-neutral-50"
                   : "scale-x-0 bg-neutral-950 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 dark:bg-neutral-50"
@@ -67,7 +69,7 @@ const MobileNav = ({
       {/* 頂部導航 */}
       <div className="flex h-16 items-center justify-between px-6">
         <Link
-          href="/"
+          href="#"
           className="text-lg font-medium tracking-wide text-neutral-950 dark:text-neutral-50"
         >
           Small R
@@ -111,7 +113,7 @@ const MobileNav = ({
                   >
                     {item.name}
                     <span
-                      className={`absolute -bottom-1 left-0 right-0 h-px transition-all duration-300 ${
+                      className={`absolute inset-x-0 -bottom-1 h-px transition-all duration-300 ${
                         pathname === item.href
                           ? "bg-neutral-950 dark:bg-neutral-50"
                           : "scale-x-0 bg-neutral-950 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 dark:bg-neutral-50"
@@ -134,7 +136,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50">
+    <header className="fixed inset-x-0 top-0 z-50">
       <div className="hidden md:block">
         <DesktopNav pathname={pathname} />
       </div>

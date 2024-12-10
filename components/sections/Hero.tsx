@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   Github,
   Mail,
@@ -8,10 +9,10 @@ import {
   Sparkles,
   ChevronDown,
 } from "lucide-react";
-import { motion } from "framer-motion";
-import { siteConfig } from "@/constants";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Image from "next/image";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+
+import { siteConfig } from "@/constants";
 
 export default function Hero() {
   const [text] = useTypewriter({
@@ -31,7 +32,7 @@ export default function Hero() {
     <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center">
       <motion.div className="relative mx-auto max-w-2xl px-4 text-center">
         <motion.div
-          className="mx-auto mb-8 size-32 sm:size-40 overflow-hidden rounded-full"
+          className="mx-auto mb-8 size-32 overflow-hidden rounded-full sm:size-40"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -60,7 +61,7 @@ export default function Hero() {
         </motion.div>
 
         <h1 className="relative inline-block text-3xl font-bold tracking-tight sm:text-4xl md:text-6xl">
-          Hi, I'm{" "}
+          Hi, {"I'm"}
           <span className="text-primary-light dark:text-primary-dark">
             {siteConfig.name}
           </span>
@@ -139,7 +140,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-[50px] left-1/2 -translate-x-1/2 flex cursor-pointer flex-col items-center gap-2 transition-opacity hover:opacity-80"
+        className="absolute bottom-[50px] left-1/2 flex -translate-x-1/2 cursor-pointer flex-col items-center gap-2 transition-opacity hover:opacity-80"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
