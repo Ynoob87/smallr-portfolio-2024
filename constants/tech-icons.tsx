@@ -16,29 +16,29 @@ export const TECH_ICONS = {
   // 主要技術
   React: {
     Icon: SiReact,
-    color: "#149ECA",
+    color: "#61DAFB",
   },
   "Next.js": {
     Icon: SiNextdotjs,
-    color: "#FFFFFF",
+    color: "#000000",
   },
   TypeScript: {
     Icon: SiTypescript,
-    color: "#007ACC",
+    color: "#3178C6",
   },
   Tailwind: {
     Icon: SiTailwindcss,
-    color: "#38BDF8",
+    color: "#06B6D4",
   },
 
   // 後端技術
   "Node.js": {
     Icon: SiNodedotjs,
-    color: "#539E43",
+    color: "#339933",
   },
   MongoDB: {
     Icon: SiMongodb,
-    color: "#00ED64",
+    color: "#47A248",
   },
 
   // 遊戲開發
@@ -48,25 +48,25 @@ export const TECH_ICONS = {
   },
   Roblox: {
     Icon: SiRoblox,
-    color: "#FF0000",
+    color: "#000000",
   },
 
   // 其他語言
   Python: {
     Icon: SiPython,
-    color: "#FFD43B",
+    color: "#3776AB",
   },
   "C++": {
     Icon: SiCplusplus,
-    color: "#659AD2",
+    color: "#00599C",
   },
 } as const;
 
 export const getTechIcon = (tech: keyof typeof TECH_ICONS) => {
   const iconData = TECH_ICONS[tech];
   if (!iconData) return <span>{tech[0]}</span>;
-  const { Icon, className } = iconData;
-  return <Icon className={`size-4 ${className}`} />;
+  const { Icon, color } = iconData;
+  return <Icon className="size-4" style={{ color }} />;
 };
 
 // 分組顯示的技術棧

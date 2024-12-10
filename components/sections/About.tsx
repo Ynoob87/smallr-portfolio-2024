@@ -115,14 +115,7 @@ export default function About() {
                       className="group flex flex-col items-center gap-2"
                     >
                       <div className="rounded-lg p-3 transition-colors group-hover:bg-neutral-800/50">
-                        <tech.Icon
-                          style={{
-                            width: "2rem",
-                            height: "2rem",
-                            fill: "currentColor",
-                            color: "inherit",
-                          }}
-                        />
+                        <tech.Icon style={{ width: "2rem", height: "2rem" }} />
                       </div>
                       <span className="text-sm text-neutral-700 dark:text-neutral-300">
                         {techName}
