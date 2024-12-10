@@ -8,6 +8,7 @@ import {
   Code2,
   Sparkles,
   ChevronDown,
+  FileText,
 } from "lucide-react";
 import Image from "next/image";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
@@ -92,52 +93,73 @@ export default function Hero() {
             </motion.p>
           </div>
 
-          {/* Social Links */}
+          {/* Social Links and CV Button */}
           <motion.div
-            className="flex justify-center gap-4 sm:gap-6"
+            className="flex flex-col items-center gap-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            {[
-              {
-                href: siteConfig.links.github,
-                icon: Github,
-                target: "_blank",
-                label: "Open Source Projects",
-              },
-              {
-                href: siteConfig.links.linkedin,
-                icon: Linkedin,
-                target: "_blank",
-                label: "Connect with me",
-              },
-              {
-                href: `#contact`,
-                icon: Mail,
-                target: "_self",
-                label: "Get in touch",
-              },
-            ].map((link) => (
-              <motion.a
-                key={link.href}
-                href={link.href}
-                target={link.target}
-                rel="noopener noreferrer"
-                className="group relative text-secondary-light/80 transition-colors hover:text-neutral-900 dark:text-secondary-dark/80 dark:hover:text-neutral-100"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <link.icon className="size-5 sm:size-6" />
-                <motion.span
-                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] opacity-0 transition-all group-hover:opacity-100 sm:text-xs"
-                  initial={{ y: -5 }}
-                  animate={{ y: 0 }}
+            {/* Social Links */}
+            <div className="flex justify-center gap-4 sm:gap-6">
+              {[
+                {
+                  href: siteConfig.links.github,
+                  icon: Github,
+                  target: "_blank",
+                  label: "Open Source Projects",
+                },
+                {
+                  href: siteConfig.links.linkedin,
+                  icon: Linkedin,
+                  target: "_blank",
+                  label: "Connect with me",
+                },
+                {
+                  href: `#contact`,
+                  icon: Mail,
+                  target: "_self",
+                  label: "Get in touch",
+                },
+              ].map((link) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  target={link.target}
+                  rel="noopener noreferrer"
+                  className="group relative text-secondary-light/80 transition-colors hover:text-neutral-900 dark:text-secondary-dark/80 dark:hover:text-neutral-100"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {link.label}
-                </motion.span>
-              </motion.a>
-            ))}
+                  <link.icon className="size-5 sm:size-6" />
+                  <motion.span
+                    className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] opacity-0 transition-all group-hover:opacity-100 sm:text-xs"
+                    initial={{ y: -5 }}
+                    animate={{ y: 0 }}
+                  >
+                    {link.label}
+                  </motion.span>
+                </motion.a>
+              ))}
+            </div>
+
+            {/* CV Button */}
+            <motion.a
+              href="/CV"
+              className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-medium text-white transition-all hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FileText className="size-4" />
+              <span>View My CV</span>
+              <motion.span
+                className="inline-block"
+                initial={{ x: 0 }}
+                whileHover={{ x: 2 }}
+              >
+                →
+              </motion.span>
+            </motion.a>
           </motion.div>
         </div>
       </motion.div>

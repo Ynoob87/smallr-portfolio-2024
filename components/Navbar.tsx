@@ -69,7 +69,7 @@ const MobileNav = ({
       {/* 頂部導航 */}
       <div className="flex h-16 items-center justify-between px-6">
         <Link
-          href="#"
+          href="/#"
           className="text-lg font-medium tracking-wide text-neutral-950 dark:text-neutral-50"
         >
           Small R
