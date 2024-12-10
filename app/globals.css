@@ -2,20 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* 自定義基礎樣式 */
+@layer components {
+  .text-primary {
+    @apply text-primary-light dark:text-primary-dark;
+  }
+
+  .text-secondary {
+    @apply text-secondary-light dark:text-secondary-dark;
+  }
+
+  .bg-accent {
+    @apply bg-accent-light dark:bg-accent-dark;
+  }
+
+  .border-custom {
+    @apply border-border-light dark:border-border-dark;
+  }
+}
+
+/* 平滑滾動 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 選取文字的顏色 */
+::selection {
+  @apply bg-primary-light/20 dark:bg-primary-dark/20;
+}
+
+/* 自定義滾動條 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-accent-light dark:bg-accent-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary-light/50 dark:bg-secondary-dark/50;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary-light dark:bg-secondary-dark;
 }
