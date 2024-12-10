@@ -55,14 +55,14 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="mx-auto max-w-4xl scroll-mt-16 px-6 py-16 md:scroll-mt-24 lg:px-8"
+      className="container mx-auto max-w-4xl scroll-mt-16 px-4 py-12 sm:px-6 sm:py-16 lg:px-8"
     >
-      <div className="mb-12 text-center">
+      <div className="mb-8 text-center sm:mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50"
+          className="text-2xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50 sm:text-3xl"
         >
           Get in Touch
         </motion.h2>
@@ -71,7 +71,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="mt-4 text-neutral-700 dark:text-neutral-300"
+          className="mt-3 text-sm text-neutral-700 dark:text-neutral-300 sm:mt-4 sm:text-base"
         >
           Have a question or want to work together?
         </motion.p>
@@ -82,24 +82,24 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="mx-auto max-w-xl overflow-hidden rounded-2xl bg-white shadow-xl dark:bg-neutral-900"
+        className="mx-auto max-w-xl overflow-hidden rounded-lg bg-white shadow-md dark:bg-neutral-900 sm:rounded-2xl sm:shadow-xl"
       >
         {submitted ? (
-          <div className="p-8 text-center">
-            <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
-              <Send className="size-5 text-green-600 dark:text-green-300" />
+          <div className="p-6 text-center sm:p-8">
+            <div className="mx-auto mb-4 flex size-10 items-center justify-center rounded-full bg-green-100 dark:bg-green-900 sm:size-12">
+              <Send className="size-4 text-green-600 dark:text-green-300 sm:size-5" />
             </div>
-            <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+            <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 sm:text-xl">
               Thanks for reaching out!
             </h3>
-            <p className="mt-2 text-neutral-700 dark:text-neutral-300">
+            <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300 sm:text-base">
               {"I'll"} get back to you as soon as possible.
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="p-6 sm:p-8">
-            <div className="space-y-6">
-              <div className="grid gap-6 sm:grid-cols-2">
+          <form onSubmit={handleSubmit} className="p-4 sm:p-6 md:p-8">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                 <div className="relative">
                   <label
                     htmlFor="name"
@@ -107,7 +107,7 @@ export default function Contact() {
                   >
                     Name
                   </label>
-                  <div className="relative mt-2">
+                  <div className="relative mt-1.5 sm:mt-2">
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                       <User className="size-4 text-neutral-400" />
                     </div>
@@ -116,7 +116,7 @@ export default function Contact() {
                       name="name"
                       id="name"
                       required
-                      className="block w-full rounded-lg border-0 bg-neutral-50 py-2.5 pl-10 pr-4 text-neutral-900 ring-1 ring-inset ring-neutral-200 transition-colors placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 dark:ring-neutral-700 dark:placeholder:text-neutral-500 dark:focus:ring-neutral-100"
+                      className="block w-full rounded-md border-0 bg-neutral-50 py-2 pl-10 pr-4 text-sm text-neutral-900 ring-1 ring-inset ring-neutral-200 transition-colors placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 dark:ring-neutral-700 dark:placeholder:text-neutral-500 dark:focus:ring-neutral-100 sm:rounded-lg sm:py-2.5 sm:text-base"
                       placeholder="Your name"
                     />
                   </div>
@@ -129,7 +129,7 @@ export default function Contact() {
                   >
                     Email
                   </label>
-                  <div className="relative mt-2">
+                  <div className="relative mt-1.5 sm:mt-2">
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                       <Mail className="size-4 text-neutral-400" />
                     </div>
@@ -138,7 +138,7 @@ export default function Contact() {
                       name="email"
                       id="email"
                       required
-                      className="block w-full rounded-lg border-0 bg-neutral-50 py-2.5 pl-10 pr-4 text-neutral-900 ring-1 ring-inset ring-neutral-200 transition-colors placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 dark:ring-neutral-700 dark:placeholder:text-neutral-500 dark:focus:ring-neutral-100"
+                      className="block w-full rounded-md border-0 bg-neutral-50 py-2 pl-10 pr-4 text-sm text-neutral-900 ring-1 ring-inset ring-neutral-200 transition-colors placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 dark:ring-neutral-700 dark:placeholder:text-neutral-500 dark:focus:ring-neutral-100 sm:rounded-lg sm:py-2.5 sm:text-base"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -152,8 +152,8 @@ export default function Contact() {
                 >
                   Message
                 </label>
-                <div className="relative mt-2">
-                  <div className="pointer-events-none absolute left-0 top-3 flex items-center pl-3">
+                <div className="relative mt-1.5 sm:mt-2">
+                  <div className="pointer-events-none absolute left-0 top-2.5 flex items-center pl-3 sm:top-3">
                     <MessageSquare className="size-4 text-neutral-400" />
                   </div>
                   <textarea
@@ -161,26 +161,26 @@ export default function Contact() {
                     id="message"
                     rows={5}
                     required
-                    className="block w-full rounded-lg border-0 bg-neutral-50 py-2.5 pl-10 pr-4 text-neutral-900 ring-1 ring-inset ring-neutral-200 transition-colors placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 dark:ring-neutral-700 dark:placeholder:text-neutral-500 dark:focus:ring-neutral-100"
+                    className="block w-full rounded-md border-0 bg-neutral-50 py-2 pl-10 pr-4 text-sm text-neutral-900 ring-1 ring-inset ring-neutral-200 transition-colors placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 dark:ring-neutral-700 dark:placeholder:text-neutral-500 dark:focus:ring-neutral-100 sm:rounded-lg sm:py-2.5 sm:text-base"
                     placeholder="Your message..."
                   />
                 </div>
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex justify-center">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus:ring-neutral-100 dark:focus:ring-offset-neutral-900"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-md bg-neutral-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus:ring-neutral-100 dark:focus:ring-offset-neutral-900 sm:gap-2 sm:rounded-lg sm:px-5 sm:py-2.5"
                 >
                   {isSubmitting ? (
                     <>
-                      <span className="inline-block size-4 animate-spin rounded-full border-2 border-neutral-50 border-t-transparent dark:border-neutral-900 dark:border-t-transparent" />
+                      <span className="inline-block size-3.5 animate-spin rounded-full border-2 border-neutral-50 border-t-transparent dark:border-neutral-900 dark:border-t-transparent sm:size-4" />
                       Sending...
                     </>
                   ) : (
                     <>
-                      <Send className="size-4" />
+                      <Send className="size-3.5 sm:size-4" />
                       Send Message
                     </>
                   )}
