@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import "./globals.css";
+
+import Background from "@/components/Background";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
-import Footer from "@/components/Footer";
-import Background from "@/components/Background";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Small R | Portfolio",
