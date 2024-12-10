@@ -21,20 +21,15 @@ export default function Hero() {
   });
 
   const scrollToNext = () => {
-    const nextSection = document.getElementById("about"); // 假設下一個section的id是'about'
+    const nextSection = document.getElementById("about");
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] w-full px-4 flex items-center justify-center">
-      <motion.div
-        className="relative w-full max-w-2xl mx-auto text-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+    <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center">
+      <motion.div className="relative mx-auto max-w-2xl px-4 text-center">
         <motion.div
           className="mx-auto mb-8 size-32 sm:size-40 overflow-hidden rounded-full"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -64,7 +59,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <h1 className="relative inline-block text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight">
+        <h1 className="relative inline-block text-3xl font-bold tracking-tight sm:text-4xl md:text-6xl">
           Hi, I'm{" "}
           <span className="text-primary-light dark:text-primary-dark">
             {siteConfig.name}
@@ -79,7 +74,7 @@ export default function Hero() {
         </h1>
 
         <motion.div
-          className="mt-4 sm:mt-6 flex items-center justify-center gap-2 text-base sm:text-lg text-secondary-light dark:text-secondary-dark"
+          className="mt-4 flex items-center justify-center gap-2 text-base text-secondary-light dark:text-secondary-dark sm:mt-6 sm:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -90,7 +85,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.p
-          className="mt-4 sm:mt-6 text-sm sm:text-base text-secondary-light/80 dark:text-secondary-dark/80 max-w-lg mx-auto"
+          className="mx-auto mt-4 max-w-lg text-sm text-secondary-light/80 dark:text-secondary-dark/80 sm:mt-6 sm:text-base"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -144,13 +139,13 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+        className="absolute bottom-[50px] left-1/2 -translate-x-1/2 flex cursor-pointer flex-col items-center gap-2 transition-opacity hover:opacity-80"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
         onClick={scrollToNext}
       >
-        <span className="text-xs text-secondary-light/60 dark:text-secondary-dark/60">
+        <span className="text-xs text-neutral-600 dark:text-neutral-400">
           Scroll to explore
         </span>
         <motion.div
@@ -161,7 +156,7 @@ export default function Hero() {
             ease: "easeInOut",
           }}
         >
-          <ChevronDown className="size-4 text-secondary-light/60 dark:text-secondary-dark/60" />
+          <ChevronDown className="size-4 text-neutral-600 dark:text-neutral-400" />
         </motion.div>
       </motion.div>
     </section>
