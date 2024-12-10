@@ -58,10 +58,7 @@ export default function Hero() {
         </motion.div>
 
         <h1 className="relative inline-block text-4xl font-bold tracking-tight sm:text-6xl">
-          Hi, I'm{" "}
-          <span className="bg-gradient-to-r from-primary-light to-secondary-light bg-clip-text text-transparent dark:from-primary-dark dark:to-secondary-dark">
-            {siteConfig.name}
-          </span>
+          Hi, I'm <span className="text-primary-light">{siteConfig.name}</span>
           <motion.span
             className="absolute -right-8 -top-6 text-primary-light dark:text-primary-dark"
             animate={{ rotate: [0, 10, 0] }}

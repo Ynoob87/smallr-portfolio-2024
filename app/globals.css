@@ -4,7 +4,11 @@
 
 @layer base {
   body {
-    @apply bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark;
+    @apply bg-background-light text-text-light transition-colors duration-200;
+  }
+
+  .dark body {
+    @apply bg-background-dark text-text-dark;
   }
 }
 
@@ -14,16 +18,8 @@
     @apply text-primary-light dark:text-primary-dark;
   }
 
-  .text-secondary {
-    @apply text-secondary-light dark:text-secondary-dark;
-  }
-
   .bg-accent {
     @apply bg-accent-light dark:bg-accent-dark;
-  }
-
-  .border-custom {
-    @apply border-border-light dark:border-border-dark;
   }
 }
 
@@ -39,18 +35,18 @@ html {
 
 /* 自定義滾動條 */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-accent-light dark:bg-accent-dark;
+  @apply bg-background-light dark:bg-background-dark;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-secondary-light/50 dark:bg-secondary-dark/50;
-  border-radius: 5px;
+  @apply bg-accent-light dark:bg-accent-dark;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-secondary-light dark:bg-secondary-dark;
+  @apply bg-primary-light/50 dark:bg-primary-dark/50;
 }
