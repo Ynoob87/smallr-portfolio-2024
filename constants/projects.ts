@@ -4,14 +4,26 @@ export const projects: Project[] = [
   {
     title: "Portfolio Website",
     description:
-      "A modern portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features dark mode, smooth animations, and responsive design.",
+      "A modern portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features dark mode, smooth animations, and a responsive design.",
     tags: ["Next.js", "TypeScript", "Tailwind"],
-    image: "/projects/Project-1.png",
+    image: "/projects/Portfolio-Website.png",
     links: {
       demo: "#",
-      // github: "#",
     },
   },
+
+  {
+    title: "About Smallr Website",
+    description:
+      "A personal website built with Next.js, TypeScript, and Tailwind CSS, designed to showcase my background, interests, and development skills. It features a modern single-page design, integrates my love for ANIME, and highlights my passion for DEVELOPMENT.",
+    tags: ["Next.js", "TypeScript", "Tailwind"],
+    image: "/projects/About-Smallr-Website.png",
+    links: {
+      demo: "https://about-smallr.vercel.app/",
+      github: "https://github.com/Ynoob87/about-small",
+    },
+  },
+
   {
     title: "Private Project",
     description:

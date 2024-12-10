@@ -4,16 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-interface PreviewCardProps {
-  title: string;
-  description?: string;
-  imageSrc: string;
-  imageAlt?: string;
-  techStack?: { icon: React.ReactNode; label: string }[];
-  actions?: { icon?: React.ReactNode; label: string; href: string }[];
-  className?: string;
-}
-
+import { PreviewCardProps } from "@/types";
 export default function PreviewCard({
   title,
   description,
