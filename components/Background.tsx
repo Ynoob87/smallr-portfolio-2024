@@ -16,10 +16,11 @@ export default function Background() {
       <div className="relative size-full bg-white dark:bg-black">
         {/* 主網格 */}
         <div
-          className="absolute inset-0 
-          bg-[linear-gradient(rgba(0,0,0,0.07)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(0,0,0,0.07)_1.5px,transparent_1.5px)] 
-          bg-[size:32px_32px] 
-          dark:bg-[linear-gradient(rgba(255,255,255,0.07)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(255,255,255,0.07)_1.5px,transparent_1.5px)]"
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.07) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(0,0,0,0.07) 1.5px, transparent 1.5px)`,
+            backgroundSize: "32px 32px",
+          }}
         />
 
         {/* 背景漸層 */}
