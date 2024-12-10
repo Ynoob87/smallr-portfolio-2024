@@ -28,11 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className="min-h-screen bg-white antialiased dark:bg-black">
         <Providers>
-          <div className="relative min-h-screen bg-neutral-50/80 dark:bg-neutral-900/80">
+          <Background />
+          <div className="relative">
             <Navbar />
-            <div className="mx-auto max-w-4xl px-6 py-8">{children}</div>
+            <main className="mx-auto max-w-4xl px-6 py-24">{children}</main>
             <Footer />
           </div>
         </Providers>
