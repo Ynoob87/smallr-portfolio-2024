@@ -5,4 +5,5 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/alaner652/",
     email: "hhgg12661@gmail.com",
   },
-};
+  formspree: process.env.NEXT_PUBLIC_FORMSPREE_ID || "",
+} as const;
