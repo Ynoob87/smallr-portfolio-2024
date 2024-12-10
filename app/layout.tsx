@@ -30,13 +30,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <Providers>
-          <Background>
-            <div className="relative min-h-screen bg-neutral-50/80 dark:bg-neutral-900/80">
-              <Navbar />
-              <div className="mx-auto max-w-4xl px-6 py-8">{children}</div>
-              <Footer />
-            </div>
-          </Background>
+          <div className="relative min-h-screen bg-neutral-50/80 dark:bg-neutral-900/80">
+            <Navbar />
+            <div className="mx-auto max-w-4xl px-6 py-8">{children}</div>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

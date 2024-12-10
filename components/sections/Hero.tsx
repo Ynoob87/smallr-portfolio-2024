@@ -20,16 +20,23 @@ export default function Hero() {
     delaySpeed: 2000,
   });
 
+  const scrollToNext = () => {
+    const nextSection = document.getElementById("about"); // 假設下一個section的id是'about'
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-4">
+    <section className="relative min-h-[calc(100vh-4rem)] w-full px-4 flex items-center justify-center">
       <motion.div
-        className="relative max-w-2xl text-center"
+        className="relative w-full max-w-2xl mx-auto text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="mx-auto mb-8 size-32 overflow-hidden rounded-full"
+          className="mx-auto mb-8 size-32 sm:size-40 overflow-hidden rounded-full"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -40,7 +47,7 @@ export default function Hero() {
               alt={siteConfig.name}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 128px, 128px"
+              sizes="(max-width: 768px) 512px, 512px"
               priority
             />
             <motion.div
@@ -57,30 +64,33 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <h1 className="relative inline-block text-4xl font-bold tracking-tight sm:text-6xl">
-          Hi, I'm <span className="text-primary-light">{siteConfig.name}</span>
+        <h1 className="relative inline-block text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight">
+          Hi, I'm{" "}
+          <span className="text-primary-light dark:text-primary-dark">
+            {siteConfig.name}
+          </span>
           <motion.span
             className="absolute -right-8 -top-6 text-primary-light dark:text-primary-dark"
             animate={{ rotate: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <Sparkles className="size-6" />
+            <Sparkles className="size-5 sm:size-6" />
           </motion.span>
         </h1>
 
         <motion.div
-          className="mt-6 flex items-center justify-center gap-2 text-lg text-secondary-light dark:text-secondary-dark"
+          className="mt-4 sm:mt-6 flex items-center justify-center gap-2 text-base sm:text-lg text-secondary-light dark:text-secondary-dark"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Code2 className="size-5" />
+          <Code2 className="size-4 sm:size-5" />
           <span>{text}</span>
           <Cursor cursorColor="currentColor" />
         </motion.div>
 
         <motion.p
-          className="mt-6 text-secondary-light/80 dark:text-secondary-dark/80"
+          className="mt-4 sm:mt-6 text-sm sm:text-base text-secondary-light/80 dark:text-secondary-dark/80 max-w-lg mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -134,10 +144,11 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-8 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
+        onClick={scrollToNext}
       >
         <span className="text-xs text-secondary-light/60 dark:text-secondary-dark/60">
           Scroll to explore

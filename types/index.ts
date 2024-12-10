@@ -2,7 +2,7 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
-  type: "website" | "app" | "file" | "default";
+  image: string;
   links?: {
     demo?: string;
     github?: string;

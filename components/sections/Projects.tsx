@@ -1,6 +1,6 @@
 import { Github, Globe } from "lucide-react";
 import { Project } from "@/types";
-import { projects, getProjectIcon } from "@/constants/projects";
+import { projects } from "@/constants/projects";
 import { getTechIcon, TECH_ICONS } from "@/constants/tech-icons";
 import PreviewCard from "@/components/PreviewCard";
 
@@ -14,7 +14,7 @@ export default function Projects() {
             key={index}
             title={project.title}
             description={project.description}
-            imageSrc={getProjectIcon(project.type)}
+            imageSrc={project.image}
             techStack={project.tags.map((tag) => ({
               icon: getTechIcon(tag as keyof typeof TECH_ICONS),
               label: tag,

@@ -1,6 +1,4 @@
 import type { Config } from "tailwindcss";
-import { colors } from "./constants/colors";
-import { siteConfig } from "./constants/config";
 
 const config: Config = {
   content: [
@@ -11,13 +9,23 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
-      colors: colors,
-      spacing: {
-        header: siteConfig.layout.headerHeight,
-        footer: siteConfig.layout.footerHeight,
-      },
-      maxWidth: {
-        container: siteConfig.layout.maxWidth,
+      colors: {
+        background: {
+          light: "#FFFFFF",
+          dark: "#111111",
+        },
+        text: {
+          light: "#1A1A1A",
+          dark: "#E5E5E5",
+        },
+        primary: {
+          light: "#2563EB",
+          dark: "#60A5FA",
+        },
+        accent: {
+          light: "#F3F4F6",
+          dark: "#374151",
+        },
       },
     },
   },
