@@ -25,24 +25,24 @@ const DesktopNav = ({ pathname }: { pathname: string }) => (
           <Link
             key={item.name}
             href={item.href}
-            className={`relative px-2 py-1 text-sm font-medium tracking-wide transition-colors ${
-              pathname === item.href
-                ? "text-neutral-950 dark:text-neutral-50"
-                : "text-neutral-800 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-neutral-50"
-            }`}
+            className="group relative px-2 py-1 text-sm font-medium tracking-wide transition-colors"
           >
-            {item.name}
-            {pathname === item.href && (
-              <motion.div
-                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-neutral-950 dark:bg-neutral-50"
-                layoutId="navbar-underline"
-                transition={{
-                  type: "spring",
-                  stiffness: 380,
-                  damping: 30,
-                }}
-              />
-            )}
+            <span
+              className={`${
+                pathname === item.href
+                  ? "text-neutral-950 dark:text-neutral-50"
+                  : "text-neutral-600 group-hover:text-neutral-950 dark:text-neutral-400 dark:group-hover:text-neutral-50"
+              }`}
+            >
+              {item.name}
+            </span>
+            <span
+              className={`absolute -bottom-1 left-0 right-0 h-px transition-all duration-300 ${
+                pathname === item.href
+                  ? "bg-neutral-950 dark:bg-neutral-50"
+                  : "scale-x-0 bg-neutral-950 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 dark:bg-neutral-50"
+              }`}
+            />
           </Link>
         ))}
         <ThemeToggle />
@@ -100,13 +100,15 @@ const MobileNav = ({
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`group relative block px-6 py-3 text-center text-sm font-medium tracking-wide transition-all duration-300 ${
-                    pathname === item.href
-                      ? "text-neutral-950 dark:text-neutral-50"
-                      : "text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
-                  }`}
+                  className="group relative block px-6 py-3 text-center text-sm font-medium tracking-wide transition-all duration-300"
                 >
-                  <span className="relative">
+                  <span
+                    className={`relative ${
+                      pathname === item.href
+                        ? "text-neutral-950 dark:text-neutral-50"
+                        : "text-neutral-600 group-hover:text-neutral-950 dark:text-neutral-400 dark:group-hover:text-neutral-50"
+                    }`}
+                  >
                     {item.name}
                     <span
                       className={`absolute -bottom-1 left-0 right-0 h-px transition-all duration-300 ${
