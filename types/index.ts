@@ -68,6 +68,24 @@ export interface Translation {
     viewCode: string;
     showMore: string;
     showLess: string;
+    items: {
+      portfolio: {
+        title: string;
+        description: string;
+      };
+      aboutSmallr: {
+        title: string;
+        description: string;
+      };
+      private: {
+        title: string;
+        description: string;
+      };
+      demo: {
+        title: string;
+        description: string;
+      };
+    };
   };
   contact: {
     title: string;

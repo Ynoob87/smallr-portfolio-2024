@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
 
 import PreviewCard from "@/components/PreviewCard";
-import { projects } from "@/constants/projects";
+import { useProjects } from "@/constants/projects";
 import { getTechIcon, TECH_ICONS } from "@/constants/tech-icons";
 import { useTranslations } from "@/hooks/useTranslations";
-import type { Project } from "@/types";
 
 export default function Projects() {
   const t = useTranslations();
+  const projects = useProjects();
 
   return (
     <section id="projects" className="scroll-mt-16">
@@ -32,9 +32,9 @@ export default function Projects() {
         transition={{ delay: 0.2 }}
         className="grid gap-6 md:grid-cols-2"
       >
-        {projects.map((project: Project, index: number) => (
+        {projects.map((project) => (
           <PreviewCard
-            key={index}
+            key={project.title}
             title={project.title}
             description={project.description}
             imageSrc={project.image}
