@@ -31,12 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-white antialiased dark:bg-black">
-        <SpeedInsights />
         <Providers>
           <Background />
           <div className="relative">
             <Navbar />
-            <main className="mx-auto max-w-4xl px-6 py-24">{children}</main>
+            <main className="mx-auto max-w-4xl px-6 py-24">
+              {children}
+              <SpeedInsights />
+            </main>
             <Footer />
           </div>
         </Providers>
