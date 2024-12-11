@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Background from "@/components/Background";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -31,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-white antialiased dark:bg-black">
+        <SpeedInsights />
         <Providers>
           <Background />
           <div className="relative">
