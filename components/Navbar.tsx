@@ -8,8 +8,8 @@ import { useState } from "react";
 
 import { getLocalizedNavigation } from "@/constants/navigation";
 
-import LanguageSwitch from "./LanguageSwitch";
-import ThemeToggle from "./ThemeToggle";
+import LanguageSwitch from "./ui/LanguageSwitch";
+import ThemeToggle from "./ui/ThemeToggle";
 
 // 桌面版導航組件
 const DesktopNav = ({ pathname }: { pathname: string }) => {

@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowLeft, Download, LanguagesIcon } from "lucide-react";
+import { ArrowLeft, LanguagesIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
@@ -370,18 +369,6 @@ export default function CV() {
           </div>
         </section>
       </div>
-
-      {/* 下載按鈕 */}
-      <motion.a
-        href="/CV.pdf"
-        download
-        className="fixed bottom-8 right-8 inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white shadow-lg transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <Download className="size-4" />
-        <span>{content[language].download}</span>
-      </motion.a>
     </main>
   );
 }
