@@ -17,6 +17,7 @@ export const translations: Record<"en" | "zh", Translation> = {
         contact: "聯絡我",
         cv: "查看履歷",
       },
+      scrollText: "往下滾動",
     },
     about: {
       title: "關於我",
@@ -113,6 +114,7 @@ export const translations: Record<"en" | "zh", Translation> = {
         contact: "Get in touch",
         cv: "View CV",
       },
+      scrollText: "Scroll down",
     },
     about: {
       title: "About Me",

@@ -51,85 +51,81 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[calc(100vh-4rem)] w-full items-center justify-center px-4 sm:px-6 lg:px-8"
+      className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
     >
-      <motion.div className="relative mx-auto -mt-20 w-full max-w-3xl sm:-mt-24">
-        <div className="flex flex-col items-center space-y-6">
-          {/* Avatar Container */}
+      {/* 主要內容容器 */}
+      <div className="w-full max-w-3xl">
+        <div className="flex flex-col items-center gap-6 sm:gap-8">
+          {/* 頭像 */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.05 }}
           >
-            <div className="relative size-28 overflow-hidden rounded-full sm:size-36 md:size-40">
+            <div className="relative size-28 overflow-hidden rounded-full ring-2 ring-neutral-900/10 transition duration-300 hover:ring-4 dark:ring-white/20 sm:size-32">
               <Image
                 src="/avatar.jpg"
                 alt={siteConfig.name}
                 fill
-                className="object-cover transition-transform duration-300 hover:scale-110"
-                sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 160px"
                 priority
+                sizes="(max-width: 640px) 112px, 128px"
+                className="object-cover transition duration-300 hover:scale-110"
               />
             </div>
           </motion.div>
 
-          {/* Name and Title */}
+          {/* 文字內容 */}
           <div className="text-center">
             <motion.h1
-              className="relative inline-block text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl lg:text-6xl"
+              className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               {t.hero.greeting}{" "}
-              <motion.span
-                className="text-primary-light dark:text-primary-dark"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+              <span className="relative inline-block text-primary-light dark:text-primary-dark">
                 {siteConfig.name}
-              </motion.span>
-              <motion.span
-                className="absolute -right-6 -top-4 text-primary-light dark:text-primary-dark sm:-right-8 sm:-top-6"
-                animate={{ rotate: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <Sparkles className="size-4 sm:size-5 md:size-6" />
-              </motion.span>
+                <motion.span
+                  className="absolute -right-4 -top-2 sm:-right-5 sm:-top-3"
+                  animate={{ rotate: [0, 10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Sparkles className="size-3 sm:size-4" />
+                </motion.span>
+              </span>
             </motion.h1>
 
             <motion.div
-              className="mt-2 flex items-center justify-center gap-2 text-sm text-secondary-light dark:text-secondary-dark sm:mt-3 sm:text-base md:text-lg"
+              className="mt-3 flex items-center justify-center gap-2 text-sm text-neutral-600 dark:text-neutral-400 sm:text-base"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Code2 className="size-4 sm:size-5" />
+              <Code2 className="size-4" />
               <span>{text}</span>
               <Cursor cursorColor="currentColor" />
             </motion.div>
 
             <motion.p
-              className="mx-auto mt-2 max-w-lg text-xs text-secondary-light/80 dark:text-secondary-dark/80 sm:mt-3 sm:text-sm md:text-base"
+              className="mx-auto mt-3 max-w-lg text-sm text-neutral-600 dark:text-neutral-400"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               {t.hero.description}
             </motion.p>
           </div>
 
-          {/* Social Links and CV Button */}
+          {/* 按鈕組 */}
           <motion.div
-            className="flex flex-col items-center gap-6"
+            className="mt-2 flex flex-col items-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {/* Social Links */}
-            <div className="flex items-center gap-4 sm:gap-6">
+            {/* 社交連結 */}
+            <div className="flex items-center gap-3">
               {socialLinks.map((link) => (
                 <motion.a
                   key={link.href}
@@ -138,59 +134,73 @@ export default function Hero() {
                   rel={
                     link.target === "_blank" ? "noopener noreferrer" : undefined
                   }
-                  className="group relative rounded-md p-2 text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
+                  className="group relative rounded-lg p-2 text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <link.icon className="size-5" />
                   <span className="sr-only">{link.label}</span>
-                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-neutral-800 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100 dark:bg-neutral-700">
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-neutral-900/90 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-all group-hover:-top-11 group-hover:opacity-100 dark:bg-white/90 dark:text-neutral-900">
                     {link.label}
+                    <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-neutral-900/90 dark:border-t-white/90" />
                   </span>
                 </motion.a>
               ))}
             </div>
 
-            {/* CV Button */}
+            {/* CV 按鈕 */}
             <motion.a
               href={`/${locale}/cv`}
-              className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-neutral-900 p-1 pr-5 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <FileText className="size-4" />
+              <span className="flex size-7 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:scale-110 dark:bg-neutral-900/10">
+                <FileText className="size-4" />
+              </span>
               <span>{t.hero.buttons.cv}</span>
               <motion.span
-                className="inline-block"
-                initial={{ x: 0 }}
-                animate={{ x: 4 }}
-                transition={{
-                  duration: 0.6,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
+                className="ml-1 origin-left transition-transform duration-300 group-hover:translate-x-1"
+                initial={{ opacity: 0, x: -4 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 }}
               >
                 →
               </motion.span>
             </motion.a>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.5,
-          delay: 0.6,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-      >
-        <ChevronDown className="size-6 text-neutral-600 dark:text-neutral-400" />
-      </motion.div>
+      {/* 滾動指示器 */}
+      <div className="absolute inset-x-0 bottom-0 pb-8">
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+        >
+          <a
+            href="#about"
+            className="group inline-flex flex-col items-center gap-1"
+            aria-label="Scroll to about section"
+          >
+            <span className="text-xs font-medium text-neutral-600 transition-colors group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-50 sm:text-sm">
+              {t.hero.scrollText}
+            </span>
+            <motion.div
+              animate={{ y: [0, 4, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <ChevronDown className="size-4 text-neutral-600 transition-colors group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-50 sm:size-5" />
+            </motion.div>
+          </a>
+        </motion.div>
+      </div>
     </section>
   );
 }

@@ -214,9 +214,9 @@ export default function CV() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-6 sm:px-6 sm:py-8">
       {/* 頂部導航 */}
-      <div className="mb-8 flex items-center justify-between">
+      <div className="mb-6 flex flex-col items-center justify-between gap-4 sm:mb-8 sm:flex-row sm:gap-0">
         <Link
           href={`/${locale}/#hero`}
           className="inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
@@ -225,20 +225,22 @@ export default function CV() {
           <span>{content[language].back}</span>
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <button
             onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
-            className="flex items-center gap-2 rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+            className="flex items-center gap-2 rounded-full bg-neutral-900 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 sm:px-4"
           >
             <LanguagesIcon className="size-4" />
-            {content[language].switchLang}
+            <span className="hidden sm:inline">
+              {content[language].switchLang}
+            </span>
           </button>
 
           <button
             onClick={handlePrint}
-            className="flex items-center gap-2 rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+            className="flex items-center gap-2 rounded-full bg-neutral-900 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 sm:px-4"
           >
-            {content[language].printCV}
+            <span>{content[language].printCV}</span>
           </button>
         </div>
       </div>
@@ -246,13 +248,13 @@ export default function CV() {
       {/* CV 內容 */}
       <div
         ref={componentRef}
-        className="prose prose-neutral dark:prose-invert mx-auto"
+        className="rounded-lg bg-white p-4 shadow-lg dark:bg-neutral-900 sm:p-8"
       >
-        <header className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-neutral-900 dark:text-neutral-50">
+        <header className="mb-6 text-center sm:mb-8">
+          <h1 className="text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
             {content[language].name}
           </h1>
-          <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-400">
+          <p className="mt-2 text-base text-neutral-600 dark:text-neutral-400 sm:text-lg">
             {content[language].role}
           </p>
         </header>

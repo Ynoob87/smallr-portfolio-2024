@@ -68,12 +68,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5"
+        />
+      </head>
       <body className="min-h-screen bg-white antialiased dark:bg-black">
         <Providers>
           <Background />
           <div className="relative">
             <Navbar />
-            <main className="mx-auto max-w-4xl px-6 py-24">
+            <main className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24">
               {children}
               <SpeedInsights />
             </main>

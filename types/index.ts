@@ -44,6 +44,7 @@ export interface Translation {
       contact: string;
       cv: string;
     };
+    scrollText: string;
   };
   about: {
     title: string;
