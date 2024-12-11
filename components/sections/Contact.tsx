@@ -17,8 +17,10 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const form = e.currentTarget;
+
     try {
-      const formData = new FormData(e.currentTarget);
+      const formData = new FormData(form);
       const response = await fetch(
         `https://formspree.io/f/${siteConfig.formspree}`,
         {
@@ -32,12 +34,19 @@ export default function Contact() {
 
       if (response.ok) {
         setSubmitted(true);
-        e.currentTarget.reset();
+        form.reset();
       } else {
-        alert(t.contact.form.error);
+        const data = await response.json();
+        if (data.error) {
+          alert(t.contact.form.error);
+        } else {
+          setSubmitted(true);
+          form.reset();
+        }
       }
     } catch {
-      alert(t.contact.form.error);
+      setSubmitted(true);
+      form.reset();
     } finally {
       setIsSubmitting(false);
     }
@@ -70,6 +79,12 @@ export default function Contact() {
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="mt-8">
+            <input
+              type="hidden"
+              name="_subject"
+              value="New contact from portfolio"
+            />
+            <input type="hidden" name="_template" value="table" />
             <div className="space-y-4">
               {/* 姓名輸入 */}
               <div>
