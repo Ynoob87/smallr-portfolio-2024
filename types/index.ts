@@ -84,14 +84,6 @@ export interface Translation {
         title: string;
         description: string;
       };
-      private: {
-        title: string;
-        description: string;
-      };
-      demo: {
-        title: string;
-        description: string;
-      };
     };
   };
   contact: {

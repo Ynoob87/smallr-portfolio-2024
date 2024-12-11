@@ -63,14 +63,6 @@ export const translations: Record<"en" | "zh", Translation> = {
           description:
             "使用 Next.js、TypeScript 和 Tailwind CSS 構建的個人網站，展示我的背景、興趣和開發技能。採用現代單頁設計，融合了我對動漫的熱愛和對開發的熱情。",
         },
-        private: {
-          title: "私人項目",
-          description: "為客戶開發的機密項目，包含自定義業務邏輯和數據可視化。",
-        },
-        demo: {
-          title: "演示項目",
-          description: "展示新技術和設計模式的實驗性項目。",
-        },
       },
     },
     contact: {
@@ -160,16 +152,6 @@ export const translations: Record<"en" | "zh", Translation> = {
           title: "About Smallr Website",
           description:
             "A personal website built with Next.js, TypeScript, and Tailwind CSS, designed to showcase my background, interests, and development skills. It features a modern single-page design, integrates my love for ANIME, and highlights my passion for DEVELOPMENT.",
-        },
-        private: {
-          title: "Private Project",
-          description:
-            "A confidential project developed for a client, featuring custom business logic and data visualization.",
-        },
-        demo: {
-          title: "Demo Only Project",
-          description:
-            "An experimental project showcasing new technologies and design patterns.",
         },
       },
     },

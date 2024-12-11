@@ -25,20 +25,5 @@ export function useProjects(): Project[] {
         github: "https://github.com/Ynoob87/about-small",
       },
     },
-    {
-      title: t.projects.items.private.title,
-      description: t.projects.items.private.description,
-      tags: ["React", "Node.js", "MongoDB"],
-      image: "/avatar.jpg",
-    },
-    {
-      title: t.projects.items.demo.title,
-      description: t.projects.items.demo.description,
-      tags: ["Vue.js", "GraphQL", "Tailwind"],
-      image: "/avatar.jpg",
-      links: {
-        demo: "#",
-      },
-    },
   ];
 }
