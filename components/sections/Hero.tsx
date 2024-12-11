@@ -24,6 +24,27 @@ export default function Hero() {
     delaySpeed: 2000,
   });
 
+  const socialLinks = [
+    {
+      href: siteConfig.links.github,
+      icon: Github,
+      label: t.hero.buttons.github,
+      target: "_blank",
+    },
+    {
+      href: siteConfig.links.linkedin,
+      icon: Linkedin,
+      label: t.hero.buttons.linkedin,
+      target: "_blank",
+    },
+    {
+      href: "#contact",
+      icon: Mail,
+      label: t.hero.buttons.contact,
+      target: "_self",
+    },
+  ];
+
   return (
     <section
       id="hero"
@@ -105,45 +126,24 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             {/* Social Links */}
-            <div className="flex justify-center gap-4 sm:gap-6">
-              {[
-                {
-                  href: siteConfig.links.github,
-                  icon: Github,
-                  target: "_blank",
-                  label: "Open Source Projects",
-                },
-                {
-                  href: siteConfig.links.linkedin,
-                  icon: Linkedin,
-                  target: "_blank",
-                  label: "Connect with me",
-                },
-                {
-                  href: `#contact`,
-                  icon: Mail,
-                  target: "_self",
-                  label: "Get in touch",
-                },
-              ].map((link) => (
+            <div className="flex items-center gap-4 sm:gap-6">
+              {socialLinks.map((link) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
                   target={link.target}
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                  className="group relative text-secondary-light/80 transition-colors hover:text-neutral-900 dark:text-secondary-dark/80 dark:hover:text-neutral-100"
-                  whileHover={{ scale: 1.1, y: -2 }}
+                  rel={
+                    link.target === "_blank" ? "noopener noreferrer" : undefined
+                  }
+                  className="group relative rounded-md p-2 text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <link.icon className="size-5 sm:size-6" aria-hidden="true" />
-                  <motion.span
-                    className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] opacity-0 transition-all group-hover:opacity-100 sm:text-xs"
-                    initial={{ y: -5 }}
-                    animate={{ y: 0 }}
-                  >
+                  <link.icon className="size-5" />
+                  <span className="sr-only">{link.label}</span>
+                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-neutral-800 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100 dark:bg-neutral-700">
                     {link.label}
-                  </motion.span>
+                  </span>
                 </motion.a>
               ))}
             </div>
@@ -151,16 +151,21 @@ export default function Hero() {
             {/* CV Button */}
             <motion.a
               href="/CV"
-              className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-medium text-white transition-all hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+              className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <FileText className="size-4" />
-              <span>View My CV</span>
+              <span>{t.hero.buttons.cv}</span>
               <motion.span
                 className="inline-block"
                 initial={{ x: 0 }}
-                whileHover={{ x: 2 }}
+                animate={{ x: 4 }}
+                transition={{
+                  duration: 0.6,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
               >
                 →
               </motion.span>
@@ -169,23 +174,19 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Simplified Scroll Indicator */}
+      {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-neutral-500 dark:text-neutral-400"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.6,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
       >
-        <motion.div
-          animate={{ y: [0, 4, 0] }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <ChevronDown className="size-6" />
-        </motion.div>
+        <ChevronDown className="size-6 text-neutral-600 dark:text-neutral-400" />
       </motion.div>
     </section>
   );

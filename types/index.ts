@@ -38,6 +38,12 @@ export interface Translation {
     greeting: string;
     roles: readonly string[];
     description: string;
+    buttons: {
+      github: string;
+      linkedin: string;
+      contact: string;
+      cv: string;
+    };
   };
   about: {
     title: string;
