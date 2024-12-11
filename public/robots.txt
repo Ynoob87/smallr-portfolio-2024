@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://smallr-portfolio.vercel.app/sitemap.xml

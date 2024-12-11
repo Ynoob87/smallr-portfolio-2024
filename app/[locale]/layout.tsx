@@ -24,28 +24,45 @@ export async function generateMetadata({
     en: `${siteConfig.name} | Portfolio`,
   } as const;
 
+  const descriptions = {
+    zh: "全端開發者，專注於現代網頁技術與創意解決方案",
+    en: "Full-Stack developer specializing in modern web technologies and creative solutions",
+  } as const;
+
   return {
     title: titles[locale],
-    description: siteConfig.description,
+    description: descriptions[locale],
     openGraph: {
       title: titles[locale],
-      description: siteConfig.description,
+      description: descriptions[locale],
       siteName: siteConfig.name,
       images: [
         {
           url: siteConfig.ogImage,
           width: 1200,
           height: 630,
+          alt: titles[locale],
         },
       ],
       locale,
       type: "website",
     },
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `https://smallr-portfolio.vercel.app/${locale}`,
       languages: {
-        en: "/en",
-        zh: "/zh",
+        en: "https://smallr-portfolio.vercel.app/en",
+        zh: "https://smallr-portfolio.vercel.app/zh",
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
     },
   };
