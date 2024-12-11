@@ -6,23 +6,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-import { navigation } from "@/constants/navigation";
-import { getLocaleFromPathname } from "@/lib/utils";
+import { getLocalizedNavigation } from "@/constants/navigation";
 
 import LanguageSwitch from "./LanguageSwitch";
 import ThemeToggle from "./ThemeToggle";
 
 // 桌面版導航組件
 const DesktopNav = ({ pathname }: { pathname: string }) => {
-  const locale = getLocaleFromPathname(pathname);
-  const navItems = navigation[locale];
+  const locale = pathname?.startsWith("/zh") ? "zh" : "en";
+  const navItems = getLocalizedNavigation(locale);
 
   return (
     <div className="relative backdrop-blur-xl">
       <div className="absolute inset-0 bg-white/70 dark:bg-black/70" />
       <nav className="relative mx-auto flex h-16 max-w-4xl items-center justify-between px-6">
         <Link
-          href="#"
+          href={`/${locale}/#hero`}
           className="text-lg font-medium tracking-wide text-neutral-950 dark:text-neutral-50"
         >
           Small R
@@ -72,17 +71,16 @@ const MobileNav = ({
   setIsOpen: (value: boolean) => void;
   pathname: string;
 }) => {
-  const locale = getLocaleFromPathname(pathname);
-  const navItems = navigation[locale];
+  const locale = pathname?.startsWith("/zh") ? "zh" : "en";
+  const navItems = getLocalizedNavigation(locale);
 
   return (
     <div className="relative backdrop-blur-xl">
       <div className="absolute inset-0 bg-white/80 dark:bg-black/80" />
       <div className="relative">
-        {/* 頂部導航 */}
         <div className="flex h-16 items-center justify-between px-6">
           <Link
-            href="/#hero"
+            href={`/${locale}/#hero`}
             className="text-lg font-medium tracking-wide text-neutral-950 dark:text-neutral-50"
           >
             Small R

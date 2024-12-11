@@ -11,6 +11,7 @@ import {
   FileText,
 } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 import { siteConfig } from "@/constants";
@@ -18,6 +19,8 @@ import { useTranslations } from "@/hooks/useTranslations";
 
 export default function Hero() {
   const t = useTranslations();
+  const pathname = usePathname();
+  const locale = pathname?.startsWith("/zh") ? "zh" : "en";
   const [text] = useTypewriter({
     words: [...t.hero.roles],
     loop: true,
@@ -150,7 +153,7 @@ export default function Hero() {
 
             {/* CV Button */}
             <motion.a
-              href="/CV"
+              href={`/${locale}/cv`}
               className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

@@ -14,3 +14,11 @@ export const navigation = {
 } as const;
 
 export type NavigationItem = (typeof navigation)[Locale][number];
+
+// 輔助函數：獲取帶有語言前綴的導航鏈接
+export function getLocalizedNavigation(locale: Locale) {
+  return navigation[locale].map((item) => ({
+    ...item,
+    href: `/${locale}${item.href}`,
+  }));
+}

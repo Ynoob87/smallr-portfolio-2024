@@ -23,9 +23,10 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url));
   }
 
-  // 檢查URL是否包含有效的語言代碼
+  // 檢查路徑是否包含有效的語言代碼
   const pathnameHasValidLocale = validLocales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    (locale) =>
+      pathname.startsWith(`/${locale}`) || pathname.startsWith(`/${locale}/`)
   );
 
   // 如果沒有有效的語言代碼，添加默認語言
@@ -37,5 +38,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|static|.*\\..*).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };

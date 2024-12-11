@@ -1,59 +1,241 @@
 # Small R's Portfolio
 
-這是我的個人作品集網站，使用 Next.js 14 和 Tailwind CSS 構建。
+A modern, internationalized portfolio website built with Next.js 14 and Tailwind CSS. [中文文档](./README.zh.md)
 
-## 功能特點
+![Portfolio Preview](./public/preview.png)
 
-- 🌍 國際化支援（中文/英文）
-- 🎨 深色/淺色主題切換
-- 📱 響應式設計
-- ⚡ 快速加載
-- 🔍 SEO 優化
+## 🌟 Features
 
-## 技術棧
+### 🌍 Internationalization
 
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- React Email
-- Formspree
+- Built-in support for English and Chinese
+- Easy to add new languages
+- URL-based language switching
+- Automatic language detection and redirection
 
-## 開始使用
+### 🎨 Modern Design
 
-1. 克隆倉庫：
+- Responsive design for all devices
+- Dark/Light theme with system preference detection
+- Smooth animations and transitions
+- Clean and minimal UI
 
-```bash
-git clone https://github.com/your-username/portfolio.git
+### ⚡ Performance
+
+- Next.js 14 App Router
+- Static Site Generation (SSG)
+- Optimized images and assets
+- Fast page loads and navigation
+
+## 🛠️ Customization
+
+### Adding a New Language
+
+1. Add language to types:
+
+```typescript
+// types/index.ts
+export type Locale = "en" | "zh" | "your_locale";
 ```
 
-2. 安裝依賴：
+2. Add translations:
+
+```typescript
+// constants/i18n.ts
+export const translations = {
+  your_locale: {
+    nav: {
+      about: "Your Translation",
+      projects: "Your Translation",
+      contact: "Your Translation",
+    },
+    // ... other translations
+  },
+};
+```
+
+3. Update site config:
+
+```typescript
+// config/site.ts
+export const siteConfig = {
+  locales: [
+    { locale: "en", label: "English" },
+    { locale: "zh", label: "中文" },
+    { locale: "your_locale", label: "Your Language" },
+  ],
+};
+```
+
+### Customizing Content
+
+#### Personal Information
+
+```typescript
+// config/site.ts
+export const siteConfig: SiteConfig = {
+  name: "Your Name",
+  title: "Your Title",
+  description: "Your Description",
+  links: {
+    github: "https://github.com/yourusername",
+    linkedin: "https://linkedin.com/in/yourusername",
+    email: "your.email@example.com",
+  },
+};
+```
+
+#### Projects
+
+```typescript
+// constants/projects.ts
+export const projects: Project[] = [
+  {
+    title: "Project Name",
+    description: "Project description",
+    tags: ["Next.js", "TypeScript", "Tailwind"],
+    image: "/projects/your-image.png",
+    links: {
+      demo: "https://your-demo.com",
+      github: "https://github.com/your-repo",
+    },
+  },
+  // Add more projects...
+];
+```
+
+#### About Section
+
+```typescript
+// constants/i18n.ts
+{
+  about: {
+    title: "Your Title",
+    description: "Your Description",
+    features: {
+      // Add your features
+    },
+  },
+}
+```
+
+### Adding Social Links
+
+1. Add new link to site config:
+
+```typescript
+// config/site.ts
+export const siteConfig: SiteConfig = {
+  links: {
+    twitter: "https://twitter.com/yourusername",
+    // Add more social links
+  },
+};
+```
+
+2. Add icon to Hero component:
+
+```typescript
+// components/sections/Hero.tsx
+const socialLinks = [
+  {
+    href: siteConfig.links.twitter,
+    icon: Twitter,
+    label: "Follow me on Twitter",
+    target: "_blank",
+  },
+  // Add more social links
+];
+```
+
+## 🚀 Getting Started
+
+1. Clone and customize:
 
 ```bash
+# Clone the repository
+git clone https://github.com/Ynoob87/portfolio.git your-portfolio
+
+# Navigate to the directory
+cd your-portfolio
+
+# Install dependencies
 pnpm install
-```
 
-3. 運行開發服務器：
-
-```bash
+# Start development server
 pnpm dev
 ```
 
-4. 打開 [http://localhost:3000](http://localhost:3000)
+2. Update configuration:
 
-## 國際化
+- Edit `config/site.ts` with your information
+- Modify `constants/i18n.ts` for translations
+- Update `constants/projects.ts` with your projects
 
-網站支援中文和英文兩種語言：
+3. Customize components:
 
-- 英文：`/en`
-- 中文：`/zh`
+- Modify components in `components/sections/`
+- Update styles in `tailwind.config.js`
+- Add new features as needed
 
-語言切換通過 URL 路徑實現，使用 Next.js 的中間件自動處理語言重定向。
+## 📦 Project Structure
 
-## 部署
+```
+├── app/                  # Next.js 14 App Router
+│   ├── [locale]/        # i18n routes
+│   └── api/             # API routes
+├── components/          # React components
+│   ├── sections/        # Page sections
+│   └── ui/             # UI components
+├── config/             # Configuration files
+├── constants/          # Constants and data
+├── hooks/              # Custom React hooks
+├── lib/               # Utility functions
+├── public/            # Static assets
+└── types/             # TypeScript types
+```
 
-網站使用 Vercel 部署。每次推送到 main 分支都會自動部署。
+## 🔧 Advanced Configuration
 
-## 授權
+### Environment Variables
 
-MIT License
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_GA_ID=your-ga-id
+```
+
+### Custom Themes
+
+```typescript
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          // Add your colors
+        },
+      },
+    },
+  },
+};
+```
+
+## 📝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+- Chen-Chi Wu
+- Email: hhgg12661@gmail.com
+- GitHub: [@Ynoob87](https://github.com/Ynoob87)
+- LinkedIn: [alaner652](https://www.linkedin.com/in/alaner652/)
+
+---
+
+[中文文档](./README.zh.md) | [Report Bug](https://github.com/Ynoob87/portfolio/issues) | [Request Feature](https://github.com/Ynoob87/portfolio/issues)
