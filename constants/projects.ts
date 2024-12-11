@@ -7,7 +7,7 @@ export function useProjects(): Project[] {
   return [
     {
       title: "Portfolio Website",
-      description: "使用 Next.js 14 和 Tailwind CSS 開發的個人作品集網站",
+      description: t.projects.items.portfolio.description,
       tags: ["Next.js", "TypeScript", "Tailwind"],
       image: "/projects/Portfolio-Website.png",
       links: {
