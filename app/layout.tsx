@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+
 import Background from "@/components/Background";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
