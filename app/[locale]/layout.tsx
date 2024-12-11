@@ -30,7 +30,6 @@ export async function generateMetadata({
     openGraph: {
       title: titles[locale],
       description: siteConfig.description,
-      url: siteConfig.url,
       siteName: siteConfig.name,
       images: [
         {
@@ -66,5 +65,5 @@ export default async function LocaleLayout({
 }
 
 export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "zh" }] as const;
+  return [{ locale: "en" }, { locale: "zh" }];
 }
