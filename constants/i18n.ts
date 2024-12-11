@@ -21,7 +21,7 @@ export const translations: Record<"en" | "zh", Translation> = {
     },
     about: {
       title: "關於我",
-      description: "熱衷於創造有影響力的數字體驗",
+      description: "熱衷於創造有影響力的數位體驗",
       features: {
         fullstack: {
           title: "全端開發",

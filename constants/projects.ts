@@ -6,7 +6,7 @@ export function useProjects(): Project[] {
 
   return [
     {
-      title: "Portfolio Website",
+      title: t.projects.items.portfolio.title,
       description: t.projects.items.portfolio.description,
       tags: ["Next.js", "TypeScript", "Tailwind"],
       image: "/projects/Portfolio-Website.png",
