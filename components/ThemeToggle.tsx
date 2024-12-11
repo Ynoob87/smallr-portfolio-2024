@@ -4,11 +4,13 @@ import { Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
+import { useTranslations } from "@/hooks/useTranslations";
+
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const t = useTranslations();
 
-  // 避免水合作用不匹配
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -17,7 +19,6 @@ export default function ThemeToggle() {
     return null;
   }
 
-  // 根據當前主題顯示對應圖標
   const getIcon = () => {
     switch (theme) {
       case "dark":
@@ -29,7 +30,17 @@ export default function ThemeToggle() {
     }
   };
 
-  // 點擊切換主題
+  const getLabel = () => {
+    switch (theme) {
+      case "dark":
+        return t.common.darkMode;
+      case "light":
+        return t.common.lightMode;
+      default:
+        return t.common.systemMode;
+    }
+  };
+
   const toggleTheme = () => {
     switch (theme) {
       case "system":
@@ -50,7 +61,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="rounded-md p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-      aria-label={`Current theme: ${theme}`}
+      aria-label={getLabel()}
     >
       {getIcon()}
     </button>

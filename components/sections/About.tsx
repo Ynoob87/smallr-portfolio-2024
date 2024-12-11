@@ -5,34 +5,29 @@ import { Code2, Laptop, Lightbulb, Rocket } from "lucide-react";
 
 import { techGroups } from "@/constants";
 import { TECH_ICONS } from "@/constants/tech-icons";
+import { useTranslations } from "@/hooks/useTranslations";
 
 export default function About() {
+  const t = useTranslations();
+
   const features = [
     {
       icon: Code2,
-      title: "Full-Stack Development",
-      description:
-        "Building complete web applications from frontend to backend using React, Next.js, Node.js, and modern databases.",
+      key: "fullstack",
     },
     {
       icon: Laptop,
-      title: "Frontend Expertise",
-      description:
-        "Creating responsive and performant user interfaces with TypeScript, Tailwind CSS, and modern React patterns.",
+      key: "frontend",
     },
     {
       icon: Lightbulb,
-      title: "Backend Solutions",
-      description:
-        "Developing scalable server-side applications and RESTful APIs with focus on security and performance.",
+      key: "backend",
     },
     {
       icon: Rocket,
-      title: "Game Development",
-      description:
-        "4+ years of Roblox development experience using Lua/Luau, demonstrating versatility in different programming domains.",
+      key: "gamedev",
     },
-  ];
+  ] as const;
 
   return (
     <section
@@ -46,7 +41,7 @@ export default function About() {
           viewport={{ once: true }}
           className="text-3xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50"
         >
-          About Me
+          {t.about.title}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -55,8 +50,7 @@ export default function About() {
           transition={{ delay: 0.1 }}
           className="mt-4 text-neutral-700 dark:text-neutral-300"
         >
-          A passionate developer focused on creating impactful digital
-          experiences
+          {t.about.description}
         </motion.p>
       </div>
 
@@ -68,22 +62,25 @@ export default function About() {
         transition={{ delay: 0.2 }}
         className="mb-16 grid gap-8 md:grid-cols-2"
       >
-        {features.map((feature) => (
-          <div
-            key={feature.title}
-            className="group relative rounded-2xl bg-neutral-100 p-6 dark:bg-neutral-900"
-          >
-            <div className="mb-4 inline-block rounded-lg bg-neutral-200 p-3 dark:bg-neutral-800">
-              <feature.icon className="size-6" />
+        {features.map((feature) => {
+          const content = t.about.features[feature.key];
+          return (
+            <div
+              key={feature.key}
+              className="group relative rounded-2xl bg-neutral-100 p-6 dark:bg-neutral-900"
+            >
+              <div className="mb-4 inline-block rounded-lg bg-neutral-200 p-3 dark:bg-neutral-800">
+                <feature.icon className="size-6" />
+              </div>
+              <h3 className="mb-2 text-lg font-semibold text-neutral-950 dark:text-neutral-50">
+                {content.title}
+              </h3>
+              <p className="text-neutral-700 dark:text-neutral-300">
+                {content.description}
+              </p>
             </div>
-            <h3 className="mb-2 text-lg font-semibold text-neutral-950 dark:text-neutral-50">
-              {feature.title}
-            </h3>
-            <p className="text-neutral-700 dark:text-neutral-300">
-              {feature.description}
-            </p>
-          </div>
-        ))}
+          );
+        })}
       </motion.div>
 
       {/* 技術堆疊 */}
@@ -94,7 +91,7 @@ export default function About() {
           viewport={{ once: true }}
           className="mb-8 text-2xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50"
         >
-          Tech Stack
+          {t.about.techStack}
         </motion.h3>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

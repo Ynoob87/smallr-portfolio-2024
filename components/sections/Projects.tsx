@@ -1,15 +1,37 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
 
 import PreviewCard from "@/components/PreviewCard";
 import { projects } from "@/constants/projects";
 import { getTechIcon, TECH_ICONS } from "@/constants/tech-icons";
-import { Project } from "@/types";
+import { useTranslations } from "@/hooks/useTranslations";
+import type { Project } from "@/types";
 
 export default function Projects() {
+  const t = useTranslations();
+
   return (
-    <section id="projects" className="flex flex-col gap-8">
-      <h2 className="text-2xl font-bold">Featured Projects</h2>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+    <section id="projects" className="scroll-mt-16">
+      <div className="mb-12 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50"
+        >
+          {t.projects.title}
+        </motion.h2>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="grid gap-6 md:grid-cols-2"
+      >
         {projects.map((project: Project, index: number) => (
           <PreviewCard
             key={index}
@@ -27,7 +49,7 @@ export default function Projects() {
                       ? [
                           {
                             icon: <Globe className="size-4" />,
-                            label: "Visit Site",
+                            label: t.projects.viewDemo,
                             href: project.links.demo,
                           },
                         ]
@@ -36,7 +58,7 @@ export default function Projects() {
                       ? [
                           {
                             icon: <Github className="size-4" />,
-                            label: "Source Code",
+                            label: t.projects.viewCode,
                             href: project.links.github,
                           },
                         ]
@@ -46,7 +68,7 @@ export default function Projects() {
             }
           />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

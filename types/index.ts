@@ -42,6 +42,32 @@ export interface Translation {
   about: {
     title: string;
     description: string;
+    features: {
+      fullstack: {
+        title: string;
+        description: string;
+      };
+      frontend: {
+        title: string;
+        description: string;
+      };
+      backend: {
+        title: string;
+        description: string;
+      };
+      gamedev: {
+        title: string;
+        description: string;
+      };
+    };
+    techStack: string;
+  };
+  projects: {
+    title: string;
+    viewDemo: string;
+    viewCode: string;
+    showMore: string;
+    showLess: string;
   };
   contact: {
     title: string;
@@ -51,7 +77,16 @@ export interface Translation {
       email: string;
       message: string;
       submit: string;
+      success: string;
+      error: string;
     };
+  };
+  common: {
+    loading: string;
+    error: string;
+    darkMode: string;
+    lightMode: string;
+    systemMode: string;
   };
 }
 
