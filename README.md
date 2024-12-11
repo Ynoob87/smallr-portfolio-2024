@@ -1,48 +1,112 @@
-# Small R's Portfolio
+# Small R Portfolio
 
-This is my personal portfolio website built with Next.js 14 and Tailwind CSS.
+<div align="center">
+  <img src="./public/preview.png" alt="Portfolio Preview" width="600px" />
+  
+  <p align="center">
+    A modern, responsive portfolio website built with Next.js 14 and Tailwind CSS
+  </p>
 
-[English](./README.en.md) | [繁體中文](./README.zh.md)
+  <p align="center">
+    <a href="https://smallr-portfolio.vercel.app">View Demo</a>
+    ·
+    <a href="#features">Features</a>
+    ·
+    <a href="#tech-stack">Tech Stack</a>
+  </p>
+</div>
 
-![Portfolio Preview](./public/preview.png)
+[繁體中文](./README.zh.md) | English
 
-## 🌟 Features
+## ✨ Features
 
-### 🌍 Internationalization
+### 🌐 Internationalization
 
-- English and Traditional Chinese support
+- Built-in support for English and Traditional Chinese
 - URL-based language switching
 - Automatic language detection
 - Complete translation system
 
 ### 🎨 Modern Design
 
-- Responsive design
-- Dark/Light theme
+- Fully responsive layout
+- Dark/Light theme support
 - Smooth animations
-- Clean UI/UX
+- Clean and minimal UI
 
 ### ⚡ Performance
 
-- Next.js 14 App Router
+- Built with Next.js 14 App Router
 - Static Site Generation (SSG)
-- Image optimization
+- Automatic image optimization
 - Route prefetching
+
+### 🔍 SEO Optimized
+
+- Meta tags optimization
+- Sitemap generation
+- Robots.txt configuration
+- Structured data
 
 ## 🛠️ Tech Stack
 
-- Next.js 14
-- React 18
-- TypeScript
-- Tailwind CSS
+- **Framework:** [Next.js 14](https://nextjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animation:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide Icons](https://lucide.dev/)
+- **Deployment:** [Vercel](https://vercel.com)
+
+## 📦 Project Structure
+
+```
+├── app/                # Next.js app directory
+│   ├── [locale]/      # Locale-specific routes
+│   └── layout.tsx     # Root layout
+├── components/        # React components
+├── config/           # Configuration files
+├── constants/        # Constants and translations
+├── hooks/           # Custom React hooks
+├── public/          # Static assets
+└── types/           # TypeScript type definitions
+```
+
+## 🚀 Getting Started
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/Ynoob87/portfolio.git
+```
+
+2. Install dependencies
+
+```bash
+pnpm install
+```
+
+3. Start the development server
+
+```bash
+pnpm dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000)
+
+## 📝 Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```bash
+NEXT_PUBLIC_GOOGLE_VERIFICATION=your_google_verification_id
+```
 
 ## 👤 Author
 
-- Chen-Chi Wu
+- Wu Chen-Chi (Small R)
 - Email: hhgg12661@gmail.com
 - GitHub: [@Ynoob87](https://github.com/Ynoob87)
 - LinkedIn: [alaner652](https://www.linkedin.com/in/alaner652/)
 
 ## 📄 License
 
-MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
