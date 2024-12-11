@@ -5,16 +5,16 @@ export const translations: Record<"en" | "zh", Translation> = {
     nav: {
       about: "關於",
       projects: "作品",
-      contact: "聯繫",
+      contact: "聯絡",
     },
     hero: {
-      greeting: "你好，我是",
-      roles: ["全端開發者", "UI/UX 愛好者", "問題解決者"] as const,
-      description: "專注於創建美觀、實用的網頁應用",
+      greeting: "嗨，我是",
+      roles: ["全端開發者", "UI/UX 愛好者", "解決方案開發者"] as const,
+      description: "熱衷於創造美觀且實用的網頁應用",
       buttons: {
-        github: "開源項目",
+        github: "開源專案",
         linkedin: "與我聯繫",
-        contact: "發送訊息",
+        contact: "聯絡我",
         cv: "查看履歷",
       },
     },
@@ -55,7 +55,7 @@ export const translations: Record<"en" | "zh", Translation> = {
         portfolio: {
           title: "個人作品集",
           description:
-            "使用 Next.js、TypeScript 和 Tailwind CSS 構建的現代作品集網站。具有深色模式、流暢動畫和響��式設計。",
+            "使用 Next.js、TypeScript 和 Tailwind CSS 構建的現代作品集網站。具有深色模式、流暢動畫和響應式設計。",
         },
         aboutSmallr: {
           title: "關於我的網站",

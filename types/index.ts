@@ -115,3 +115,21 @@ export interface Translation {
 }
 
 export type Locale = "en" | "zh";
+
+export interface SiteConfig {
+  name: string;
+  title: string;
+  description: string;
+  url: string;
+  ogImage: string;
+  locales: Array<{
+    locale: Locale;
+    label: string;
+  }>;
+  defaultLocale: Locale;
+  links: {
+    github: string;
+    linkedin: string;
+    email: string;
+  };
+}

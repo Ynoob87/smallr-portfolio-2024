@@ -6,12 +6,13 @@ export function useProjects(): Project[] {
 
   return [
     {
-      title: t.projects.items.portfolio.title,
-      description: t.projects.items.portfolio.description,
+      title: "Portfolio Website",
+      description: "使用 Next.js 14 和 Tailwind CSS 開發的個人作品集網站",
       tags: ["Next.js", "TypeScript", "Tailwind"],
       image: "/projects/Portfolio-Website.png",
       links: {
-        demo: "#",
+        demo: "https://portfolio.smallr.dev",
+        github: "https://github.com/Ynoob87/portfolio",
       },
     },
     {

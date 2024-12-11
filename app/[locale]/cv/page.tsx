@@ -8,7 +8,48 @@ import { useRef, useState } from "react";
 
 type Language = "zh" | "en";
 
-const content = {
+interface CVContent {
+  title: string;
+  name: string;
+  role: string;
+  contact: string;
+  phone: string;
+  introduction: string;
+  introText: string[];
+  skills: string;
+  frontend: string;
+  backend: string;
+  gameDev: string;
+  otherLang: string;
+  education: string;
+  university: string;
+  major: string;
+  highSchool: string;
+  graduation: string;
+  projects: string;
+  robloxProject: string;
+  robloxDesc: string;
+  personalSite: string;
+  siteDesc: string;
+  printCV: string;
+  switchLang: string;
+  back: string;
+  download: string;
+  educationDetails: {
+    university: {
+      name: string;
+      major: string;
+      period: string;
+    };
+  };
+  experience: Array<{
+    title: string;
+    description: string;
+    period: string;
+  }>;
+}
+
+const content: Record<Language, CVContent> = {
   zh: {
     title: "履歷",
     name: "吳宸麒",
@@ -30,7 +71,7 @@ const content = {
     major: "五專資訊工程系",
     highSchool: "觀音高中附屬國中",
     graduation: "國中畢業",
-    projects: "專案���驗",
+    projects: "專案經驗",
     robloxProject: "Roblox 遊戲開發",
     robloxDesc: "獨立開發多個遊戲專案，累計獲得超過 300 美元和10萬Robux收益。",
     personalSite: "個人網站開發",
@@ -39,6 +80,21 @@ const content = {
     switchLang: "Switch to English",
     back: "返回",
     download: "下載 PDF",
+    educationDetails: {
+      university: {
+        name: "台北城市科技大學",
+        major: "五專資訊工程系",
+        period: "2023 - 2027",
+      },
+    },
+    experience: [
+      {
+        title: "Roblox 遊戲開發",
+        description:
+          "獨立開發多個遊戲專案，累計獲得超過 300 美元和 10 萬 Robux 收益",
+        period: "2019 - 現在",
+      },
+    ],
   },
   en: {
     title: "Curriculum Vitae",
@@ -72,6 +128,21 @@ const content = {
     switchLang: "切換至中文",
     back: "Back",
     download: "Download PDF",
+    educationDetails: {
+      university: {
+        name: "Taipei City University of Science and Technology",
+        major: "Information Engineering (5-year program)",
+        period: "2023 - 2027",
+      },
+    },
+    experience: [
+      {
+        title: "Roblox Game Development",
+        description:
+          "Independently developed multiple game projects, earning over $300 USD and 100k Robux in revenue",
+        period: "2019 - Present",
+      },
+    ],
   },
 };
 
