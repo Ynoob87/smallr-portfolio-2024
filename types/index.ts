@@ -120,7 +120,7 @@ export interface SiteConfig {
   name: string;
   title: string;
   description: string;
-  url: string;
+  formspree: string;
   ogImage: string;
   locales: Array<{
     locale: Locale;

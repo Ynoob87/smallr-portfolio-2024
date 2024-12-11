@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   name: "Small R",
   title: "Full Stack Developer",
   description: "Full-Stack developer specializing in modern web technologies",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "",
+  formspree: process.env.NEXT_PUBLIC_FORMSPREE_ID || "",
   ogImage: "/og.jpg",
   locales: [
     { locale: "en", label: "English" },
