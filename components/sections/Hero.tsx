@@ -23,7 +23,10 @@ export default function Hero() {
   });
 
   return (
-    <section className="relative flex min-h-[calc(100vh-4rem)] w-full items-center justify-center px-4 sm:px-6 lg:px-8">
+    <section
+      id="hero"
+      className="relative flex min-h-[calc(100vh-4rem)] w-full items-center justify-center px-4 sm:px-6 lg:px-8"
+    >
       <motion.div className="relative mx-auto -mt-20 w-full max-w-3xl sm:-mt-24">
         <div className="flex flex-col items-center space-y-6">
           {/* Avatar Container */}
@@ -54,7 +57,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Hi, {"I'm"}{" "}
+              Hi, {"I'm"}
               <motion.span
                 className="text-primary-light dark:text-primary-dark"
                 whileHover={{ scale: 1.05 }}
