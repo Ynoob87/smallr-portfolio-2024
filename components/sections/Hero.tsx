@@ -14,10 +14,12 @@ import Image from "next/image";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 import { siteConfig } from "@/constants";
+import { useTranslations } from "@/hooks/useTranslations";
 
 export default function Hero() {
+  const t = useTranslations();
   const [text] = useTypewriter({
-    words: ["Full Stack Developer", "UI/UX Enthusiast", "Problem Solver"],
+    words: [...t.hero.roles],
     loop: true,
     delaySpeed: 2000,
   });
@@ -57,7 +59,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Hi, {"I'm"}
+              {t.hero.greeting}{" "}
               <motion.span
                 className="text-primary-light dark:text-primary-dark"
                 whileHover={{ scale: 1.05 }}
@@ -91,8 +93,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Passionate about creating beautiful, functional, and user-friendly
-              web applications that solve real-world problems.
+              {t.hero.description}
             </motion.p>
           </div>
 

@@ -1,7 +1,16 @@
-export const navigation = [
-  { name: "About", href: "/#about" },
-  { name: "Projects", href: "/#projects" },
-  { name: "Contact", href: "/#contact" },
-] as const;
+import type { Locale } from "@/types";
 
-export type NavigationItem = (typeof navigation)[number];
+export const navigation = {
+  en: [
+    { name: "About", href: "/#about" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Contact", href: "/#contact" },
+  ],
+  zh: [
+    { name: "關於", href: "/#about" },
+    { name: "作品", href: "/#projects" },
+    { name: "聯繫", href: "/#contact" },
+  ],
+} as const;
+
+export type NavigationItem = (typeof navigation)[Locale][number];
