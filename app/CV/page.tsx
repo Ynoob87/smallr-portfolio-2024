@@ -6,7 +6,7 @@ import { useState, useRef } from "react";
 type Language = "zh" | "en";
 
 export default function CV() {
-  const [language, setLanguage] = useState<Language>("zh");
+  const [language, setLanguage] = useState<Language>("en");
   const componentRef = useRef<HTMLDivElement>(null);
 
   const content = {

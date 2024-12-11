@@ -130,11 +130,12 @@ export default function Hero() {
                   href={link.href}
                   target={link.target}
                   rel="noopener noreferrer"
+                  aria-label={link.label}
                   className="group relative text-secondary-light/80 transition-colors hover:text-neutral-900 dark:text-secondary-dark/80 dark:hover:text-neutral-100"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <link.icon className="size-5 sm:size-6" />
+                  <link.icon className="size-5 sm:size-6" aria-hidden="true" />
                   <motion.span
                     className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] opacity-0 transition-all group-hover:opacity-100 sm:text-xs"
                     initial={{ y: -5 }}

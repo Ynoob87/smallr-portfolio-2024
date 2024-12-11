@@ -12,6 +12,7 @@ export default function Footer() {
             <a
               href={siteConfig.links.github}
               target="_blank"
+              aria-label={"Link to my Github"}
               rel="noopener noreferrer"
               className="text-secondary-light transition-colors hover:text-text-light dark:text-secondary-dark dark:hover:text-text-dark"
             >
@@ -21,6 +22,7 @@ export default function Footer() {
             <a
               href={siteConfig.links.linkedin}
               target="_blank"
+              aria-label={"Link to my LinkedIn"}
               rel="noopener noreferrer"
               className="text-secondary-light transition-colors hover:text-text-light dark:text-secondary-dark dark:hover:text-text-dark"
             >
