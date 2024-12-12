@@ -1,8 +1,6 @@
 # Small R Portfolio
 
 <div align="center">
-  <img src="/public/preview.png" alt="Portfolio Preview" width="600px" />
-  
   <p align="center">
     使用 Next.js 15 和 Tailwind CSS 打造的現代響應式個人作品集網站
   </p>
@@ -13,6 +11,7 @@
     ·
     <a href="#tech-stack">技術棧</a>
   </p>
+  <img src="/public/preview.png" alt="Portfolio Preview" width="600px" />
 </div>
 
 [繁體中文](/README.zh.md) | [English](/README.md)

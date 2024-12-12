@@ -1,8 +1,6 @@
 # Small R Portfolio
 
 <div align="center">
-  <img src="/public/preview.png" alt="Portfolio Preview" width="600px" />
-  
   <p align="center">
     A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS
   </p>
@@ -13,6 +11,7 @@
     ·
     <a href="#tech-stack">Tech Stack</a>
   </p>
+  <img src="/public/preview.png" alt="Portfolio Preview" width="600px" />
 </div>
 
 [繁體中文](/README.zh.md) | [English](/README.md)
