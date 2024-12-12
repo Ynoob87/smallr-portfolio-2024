@@ -105,6 +105,11 @@ export interface Translation {
     lightMode: string;
     systemMode: string;
   };
+  notFound: {
+    title: string;
+    description: string;
+    backHome: string;
+  };
 }
 
 export type Locale = "en" | "zh";

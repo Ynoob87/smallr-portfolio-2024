@@ -84,6 +84,11 @@ export const translations: Record<"en" | "zh", Translation> = {
       lightMode: "淺色模式",
       systemMode: "系統模式",
     },
+    notFound: {
+      title: "找不到頁面",
+      description: "抱歉，我們找不到您要尋找的頁面。",
+      backHome: "返回首頁",
+    },
   },
   en: {
     nav: {
@@ -173,6 +178,11 @@ export const translations: Record<"en" | "zh", Translation> = {
       darkMode: "Dark Mode",
       lightMode: "Light Mode",
       systemMode: "System Mode",
+    },
+    notFound: {
+      title: "Page not found",
+      description: "Sorry, we couldn't find the page you're looking for.",
+      backHome: "Back to home",
     },
   },
 } as const;
