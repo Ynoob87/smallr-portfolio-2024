@@ -119,7 +119,6 @@ export default function About() {
                             width: "2rem",
                             height: "2rem",
                           }}
-                          className="text-neutral-700 dark:text-neutral-300"
                         />
                       </div>
                       <span className="text-sm text-neutral-700 dark:text-neutral-300">
