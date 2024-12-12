@@ -6,7 +6,6 @@
   <p align="center">
     A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS
   </p>
-
   <p align="center">
     <a href="https://smallr-portfolio.vercel.app">View Demo</a>
     ·
@@ -16,7 +15,7 @@
   </p>
 </div>
 
-[繁體中文](/README.zh.md) |[English](/README.md)
+[繁體中文](/README.zh.md) | [English](/README.md)
 
 ## ✨ Features
 
@@ -36,7 +35,7 @@
 
 ### ⚡ Performance
 
-- Built with Next.js 14 App Router
+- Built with Next.js 15 App Router
 - Static Site Generation (SSG)
 - Automatic image optimization
 - Route prefetching
