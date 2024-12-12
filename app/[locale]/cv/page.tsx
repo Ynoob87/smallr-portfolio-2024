@@ -1,9 +1,11 @@
 "use client";
 
-import { ArrowLeft, LanguagesIcon } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+
+import { getLocaleFromPathname } from "@/lib/utils";
 
 type Language = "zh" | "en";
 
@@ -146,10 +148,10 @@ const content: Record<Language, CVContent> = {
 };
 
 export default function CV() {
-  const [language, setLanguage] = useState<Language>("zh");
-  const componentRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const locale = pathname?.startsWith("/zh") ? "zh" : "en";
+  const language = getLocaleFromPathname(pathname);
+
+  const componentRef = useRef<HTMLDivElement>(null);
 
   const handlePrint = () => {
     const printContent = componentRef.current;
@@ -215,10 +217,10 @@ export default function CV() {
 
   return (
     <main className="container mx-auto px-4 py-6 sm:px-6 sm:py-8">
-      {/* 頂部導航 */}
+      {/* 頂導航 */}
       <div className="mb-6 flex flex-col items-center justify-between gap-4 sm:mb-8 sm:flex-row sm:gap-0">
         <Link
-          href={`/${locale}/#hero`}
+          href={`/${language}/#hero`}
           className="inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
         >
           <ArrowLeft className="size-4" />
@@ -226,16 +228,6 @@ export default function CV() {
         </Link>
 
         <div className="flex items-center gap-3 sm:gap-4">
-          <button
-            onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
-            className="flex items-center gap-2 rounded-full bg-neutral-900 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 sm:px-4"
-          >
-            <LanguagesIcon className="size-4" />
-            <span className="hidden sm:inline">
-              {content[language].switchLang}
-            </span>
-          </button>
-
           <button
             onClick={handlePrint}
             className="flex items-center gap-2 rounded-full bg-neutral-900 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 sm:px-4"
@@ -245,7 +237,6 @@ export default function CV() {
         </div>
       </div>
 
-      {/* CV 內容 */}
       <div
         ref={componentRef}
         className="rounded-lg bg-white p-4 shadow-lg dark:bg-neutral-900 sm:p-8"
