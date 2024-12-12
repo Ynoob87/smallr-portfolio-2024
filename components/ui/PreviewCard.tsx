@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
+import { useTranslations } from "@/hooks/useTranslations";
 
 import { PreviewCardProps } from "@/types";
 export default function PreviewCard({
@@ -16,6 +18,20 @@ export default function PreviewCard({
 }: PreviewCardProps) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+  const contentRef = useRef<HTMLParagraphElement>(null);
+
+  const t = useTranslations();
+
+  useEffect(() => {
+    setIsExpanded(false);
+    // 檢查內容是否超出兩行
+    if (contentRef.current) {
+      setIsOverflowing(
+        contentRef.current.scrollHeight > contentRef.current.clientHeight
+      );
+    }
+  }, [description]);
 
   const handleModalClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -61,18 +77,19 @@ export default function PreviewCard({
             {description && (
               <div className="relative">
                 <p
+                  ref={contentRef}
                   className={`text-sm text-neutral-600 transition-all duration-200 dark:text-neutral-400 ${
                     isExpanded ? "" : "line-clamp-2"
                   }`}
                 >
                   {description}
                 </p>
-                {description.length > 100 && (
+                {isOverflowing && (
                   <button
                     onClick={() => setIsExpanded(!isExpanded)}
                     className="mt-1 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
                   >
-                    {isExpanded ? "show less" : "show more"}
+                    {isExpanded ? t.projects.showLess : t.projects.showMore}
                   </button>
                 )}
               </div>
