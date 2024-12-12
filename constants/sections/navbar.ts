@@ -9,7 +9,7 @@ export const navigation = {
   zh: [
     { name: "關於", href: "/#about" },
     { name: "作品", href: "/#projects" },
-    { name: "聯繫", href: "/#contact" },
+    { name: "聯絡", href: "/#contact" },
   ],
 } as const;
 

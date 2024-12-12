@@ -11,7 +11,6 @@ import {
   SiCplusplus,
 } from "react-icons/si";
 
-// 按類別分組的技術棧
 export const TECH_ICONS = {
   // 主要技術
   React: {

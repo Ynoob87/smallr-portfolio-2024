@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { Code2, Laptop, Lightbulb, Rocket } from "lucide-react";
 
-import { techGroups } from "@/constants/About";
-import { TECH_ICONS } from "@/constants/tech-icons";
+import { TECH_ICONS } from "@/components/ui/TechIcons";
+import { techGroups } from "@/constants/sections/about";
 import { useTranslations } from "@/hooks/useTranslations";
 
 export default function About() {

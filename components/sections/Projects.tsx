@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
 
-import PreviewCard from "@/components/PreviewCard";
-import { useProjects } from "@/constants/projects";
-import { getTechIcon, TECH_ICONS } from "@/constants/tech-icons";
+import PreviewCard from "@/components/ui/PreviewCard";
+import { getTechIcon, TECH_ICONS } from "@/components/ui/TechIcons";
+import { useProjects } from "@/constants/sections/projects";
 import { useTranslations } from "@/hooks/useTranslations";
 
 export default function Projects() {

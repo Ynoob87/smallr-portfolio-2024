@@ -13,7 +13,7 @@ export const translations: Record<"en" | "zh", Translation> = {
       description: "熱衷於創造美觀且實用的網頁應用",
       buttons: {
         github: "開源專案",
-        linkedin: "與我聯繫",
+        linkedin: "與我聯絡",
         contact: "聯絡我",
         cv: "查看履歷",
       },
@@ -66,7 +66,7 @@ export const translations: Record<"en" | "zh", Translation> = {
       },
     },
     contact: {
-      title: "聯繫我",
+      title: "聯絡我",
       description: "有問題或想一起合作？",
       form: {
         name: "姓名",

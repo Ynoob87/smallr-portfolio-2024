@@ -2,9 +2,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 
 import Background from "@/components/Background";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
+import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/sections/Navbar";
 
 import "./globals.css";
 

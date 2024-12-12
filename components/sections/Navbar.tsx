@@ -6,10 +6,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-import { getLocalizedNavigation } from "@/constants/navigation";
-
-import LanguageSwitch from "./ui/LanguageSwitch";
-import ThemeToggle from "./ui/ThemeToggle";
+import LanguageSwitch from "@/components/ui/LanguageSwitch";
+import ThemeToggle from "@/components/ui/ThemeToggle";
+import { getLocalizedNavigation } from "@/constants/sections/navbar";
 
 // 桌面版導航組件
 const DesktopNav = ({ pathname }: { pathname: string }) => {
