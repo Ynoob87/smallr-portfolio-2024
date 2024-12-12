@@ -5,37 +5,23 @@ import Background from "@/components/Background";
 import Providers from "@/components/Providers";
 import Footer from "@/components/sections/Footer";
 import Navbar from "@/components/sections/Navbar";
+import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://smallr-portfolio.vercel.app"),
-  title: "Small R | Portfolio",
-  description:
-    "Full-Stack developer game developer specializing in modern web technologies and creative solutions",
-  keywords: [
-    "small R",
-    "portfolio",
-    "web development",
-    "frontend developer",
-    "React",
-    "Next.js",
-    "TypeScript",
-  ],
-  creator: "small R",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    template: `%s | ${siteConfig.name}`,
+    default: siteConfig.name,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords.join(", "),
+  creator: siteConfig.name,
   openGraph: {
     type: "website",
-    locale: "en",
-    alternateLocale: "zh",
-    url: "https://smallr-portfolio.vercel.app",
-    siteName: "Small R Portfolio",
-  },
-  alternates: {
-    canonical: "https://smallr-portfolio.vercel.app",
-    languages: {
-      en: "https://smallr-portfolio.vercel.app/en",
-      zh: "https://smallr-portfolio.vercel.app/zh",
-    },
+    url: siteConfig.url,
+    siteName: siteConfig.name,
   },
   robots: {
     index: true,

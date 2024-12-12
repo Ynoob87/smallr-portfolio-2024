@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef } from "react";
 
+import { siteConfig } from "@/config/site";
 import { getLocaleFromPathname } from "@/lib/utils";
 
 type Language = "zh" | "en";
@@ -262,14 +263,17 @@ export default function CV() {
               </a>
             </p>
             <p>
-              <a href="mailto:hhgg12661@gmail.com" className="hover:underline">
-                ✉️ hhgg12661@gmail.com
+              <a
+                href={`mailto:${siteConfig.links.email}`}
+                className="hover:underline"
+              >
+                ✉️ {siteConfig.links.email}
               </a>
             </p>
             <p>
               💼 GitHub:{" "}
               <a
-                href="https://github.com/Ynoob87"
+                href={siteConfig.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline dark:text-blue-400"
@@ -280,7 +284,7 @@ export default function CV() {
             <p>
               🔗 LinkedIn:{" "}
               <a
-                href="https://www.linkedin.com/in/alaner652/"
+                href={siteConfig.links.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline dark:text-blue-400"

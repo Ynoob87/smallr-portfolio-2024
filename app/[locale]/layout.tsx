@@ -19,19 +19,31 @@ export async function generateMetadata({
     notFound();
   }
 
-  const titles = {
-    zh: `${siteConfig.name} | 個人網站`,
-    en: `${siteConfig.name} | Portfolio`,
-  } as const;
-
-  const descriptions = {
-    zh: "全端開發者，專注於現代網頁技術與創意解決方案",
-    en: "Full-Stack developer specializing in modern web technologies and creative solutions",
-  } as const;
+  const alternateLanguages = siteConfig.locales.reduce(
+    (acc, { locale: l }) => ({
+      ...acc,
+      [l]: `${siteConfig.url}/${l}`,
+    }),
+    {}
+  );
 
   return {
-    title: titles[locale],
-    description: descriptions[locale],
+    title:
+      locale === "zh"
+        ? `${siteConfig.name} | 個人網站`
+        : `${siteConfig.name} | Portfolio`,
+    description:
+      locale === "zh"
+        ? "全端開發者，專注於現代網頁技術與創意解決方案"
+        : "Full-Stack developer specializing in modern web technologies and creative solutions",
+    openGraph: {
+      locale,
+      alternateLocale: locale === "en" ? "zh" : "en",
+    },
+    alternates: {
+      canonical: `${siteConfig.url}/${locale}`,
+      languages: alternateLanguages,
+    },
   };
 }
 

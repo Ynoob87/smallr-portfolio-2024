@@ -116,8 +116,9 @@ export type Locale = "en" | "zh";
 
 export interface SiteConfig {
   name: string;
-  title: string;
+  url: string;
   description: string;
+  keywords: string[];
   formspree: string;
   ogImage: string;
   locales: Array<{
