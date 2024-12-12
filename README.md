@@ -16,7 +16,7 @@
   </p>
 </div>
 
-[繁體中文](/README.zh.md) | English (/README.md)
+[繁體中文](/README.zh.md) |[English](/README.md)
 
 ## ✨ Features
 
