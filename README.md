@@ -121,3 +121,24 @@ NEXT_PUBLIC_FORMSPREE_ID=your_formspree_form_id
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](.github/CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) before getting started.
+
+### Ways to Contribute
+
+- Report bugs and issues
+- Suggest new features
+- Improve documentation
+- Submit pull requests
+- Share the project
+
+## 💖 Support
+
+If you find this project helpful, please consider:
+
+- ⭐ Starring the repository
+- 🐛 Reporting bugs or suggesting features
+- 🔀 Submitting pull requests
+- 📢 Sharing with others
