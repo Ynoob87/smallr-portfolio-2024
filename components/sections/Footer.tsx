@@ -1,4 +1,4 @@
-import { Github, Mail, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 
@@ -28,13 +28,6 @@ export default function Footer() {
             >
               <Linkedin className="size-5" />
               <span className="sr-only">LinkedIn</span>
-            </a>
-            <a
-              href={`mailto:${siteConfig.links.email}`}
-              className="text-secondary-light transition-colors hover:text-text-light dark:text-secondary-dark dark:hover:text-text-dark"
-            >
-              <Mail className="size-5" />
-              <span className="sr-only">Email</span>
             </a>
           </div>
 
