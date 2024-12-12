@@ -15,7 +15,6 @@ interface CVContent {
   name: string;
   role: string;
   contact: string;
-  phone: string;
   introduction: string;
   introText: string[];
   skills: string;
@@ -57,7 +56,6 @@ const content: Record<Language, CVContent> = {
     name: "吳宸麒",
     role: "資訊工程系學生 | 全端開發者",
     contact: "聯絡方式",
-    phone: "電話",
     introduction: "簡介",
     introText: [
       "我目前就讀於台北城市科技大學五專資訊工程系，擁有 4 年 Roblox 開發經驗。",
@@ -103,7 +101,6 @@ const content: Record<Language, CVContent> = {
     name: "Chen-Chi Wu",
     role: "Information Engineering Student | Full-Stack Developer",
     contact: "Contact Information",
-    phone: "Phone",
     introduction: "Introduction",
     introText: [
       "I am currently a student at Taipei City University of Science and Technology, majoring in Information Engineering, with 4 years of Roblox development experience.",
@@ -257,11 +254,6 @@ export default function CV() {
             {content[language].contact}
           </h2>
           <div className="space-y-2 text-neutral-700 dark:text-neutral-300">
-            <p>
-              <a href="tel:0908557393" className="hover:underline">
-                📞 0908557393
-              </a>
-            </p>
             <p>
               <a
                 href={`mailto:${siteConfig.links.email}`}
