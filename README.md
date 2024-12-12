@@ -1,10 +1,10 @@
 # Small R Portfolio
 
 <div align="center">
-  <img src="./public/avatar.png" alt="Portfolio Preview" width="600px" />
+  <img src="/public/avatar.jpg" alt="Portfolio Preview" width="600px" />
   
   <p align="center">
-    A modern, responsive portfolio website built with Next.js 14 and Tailwind CSS
+    A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS
   </p>
 
   <p align="center">
@@ -16,7 +16,7 @@
   </p>
 </div>
 
-[繁體中文](./README.zh.md) | English
+[繁體中文](/README.zh.md) | English (/README.md)
 
 ## ✨ Features
 
