@@ -51,7 +51,7 @@
 - 結構化資料
 - 多語言 SEO
 
-## 🛠️ 技術棧
+## ���️ 技術棧
 
 - **框架:** [Next.js 15](https://nextjs.org/)
 - **樣式:** [Tailwind CSS](https://tailwindcss.com/)
@@ -121,3 +121,24 @@ NEXT_PUBLIC_FORMSPREE_ID=你的_Formspree_表單_ID
 ## 📄 授權
 
 本專案使用 MIT 授權 - 詳見 [LICENSE](LICENSE) 檔案
+
+## 🤝 參與貢獻
+
+歡迎參與貢獻！在開始之前，請先閱讀我們的[貢獻指南](.github/CONTRIBUTING.md)和[行為準則](CODE_OF_CONDUCT.md)。
+
+### 貢獻方式
+
+- 回報 Bug 和問題
+- 提出新功能建議
+- 改善文檔
+- 提交 Pull Request
+- 分享這個專案
+
+## 💖 支持專案
+
+如果你覺得這個專案有幫助，可以：
+
+- ⭐ 給專案一個 Star
+- 🐛 回報 Bug 或提出建議
+- 🔀 提交 Pull Request
+- 📢 分享給其他人
