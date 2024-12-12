@@ -29,14 +29,6 @@ export const metadata: Metadata = {
     alternateLocale: "zh",
     url: "https://smallr-portfolio.vercel.app",
     siteName: "Small R Portfolio",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Small R Portfolio",
-      },
-    ],
   },
   alternates: {
     canonical: "https://smallr-portfolio.vercel.app",

@@ -14,7 +14,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
-import { siteConfig } from "@/constants";
+import { siteConfig } from "@/config/site";
 import { useTranslations } from "@/hooks/useTranslations";
 
 export default function Hero() {

@@ -52,7 +52,7 @@ const content: Record<Language, CVContent> = {
   zh: {
     title: "履歷",
     name: "吳宸麒",
-    role: "資訊工程系學生 | 前端開發者",
+    role: "資訊工程系學生 | 全端開發者",
     contact: "聯絡方式",
     phone: "電話",
     introduction: "簡介",
@@ -98,7 +98,7 @@ const content: Record<Language, CVContent> = {
   en: {
     title: "Curriculum Vitae",
     name: "Chen-Chi Wu",
-    role: "Information Engineering Student | Frontend Developer",
+    role: "Information Engineering Student | Full-Stack Developer",
     contact: "Contact Information",
     phone: "Phone",
     introduction: "Introduction",

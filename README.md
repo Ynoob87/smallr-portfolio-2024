@@ -1,7 +1,7 @@
 # Small R Portfolio
 
 <div align="center">
-  <img src="./public/preview.png" alt="Portfolio Preview" width="600px" />
+  <img src="./public/avatar.png" alt="Portfolio Preview" width="600px" />
   
   <p align="center">
     A modern, responsive portfolio website built with Next.js 14 and Tailwind CSS
@@ -50,7 +50,7 @@
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [Next.js 14](https://nextjs.org/)
+- **Framework:** [Next.js 15](https://nextjs.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Animation:** [Framer Motion](https://www.framer.com/motion/)
 - **Icons:** [Lucide Icons](https://lucide.dev/)
@@ -75,19 +75,19 @@
 1. Clone the repository
 
 ```bash
-git clone https://github.com/Ynoob87/portfolio.git
+git clone https://github.com/Ynoob87/smallr-portfolio.git
 ```
 
 2. Install dependencies
 
 ```bash
-pnpm install
+npm install
 ```
 
 3. Start the development server
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000)

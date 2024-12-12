@@ -32,39 +32,6 @@ export async function generateMetadata({
   return {
     title: titles[locale],
     description: descriptions[locale],
-    openGraph: {
-      title: titles[locale],
-      description: descriptions[locale],
-      siteName: siteConfig.name,
-      images: [
-        {
-          url: siteConfig.ogImage,
-          width: 1200,
-          height: 630,
-          alt: titles[locale],
-        },
-      ],
-      locale,
-      type: "website",
-    },
-    alternates: {
-      canonical: `https://smallr-portfolio.vercel.app/${locale}`,
-      languages: {
-        en: "https://smallr-portfolio.vercel.app/en",
-        zh: "https://smallr-portfolio.vercel.app/zh",
-      },
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
   };
 }
 

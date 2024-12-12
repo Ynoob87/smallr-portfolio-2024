@@ -11,8 +11,8 @@ export function useProjects(): Project[] {
       tags: ["Next.js", "TypeScript", "Tailwind"],
       image: "/projects/Portfolio-Website.png",
       links: {
-        demo: "https://portfolio.smallr.dev",
-        github: "https://github.com/Ynoob87/portfolio",
+        demo: "https://smallr-portfolio.vercel.app",
+        github: "https://github.com/Ynoob87/smallr",
       },
     },
     {

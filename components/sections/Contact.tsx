@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, MessageSquare, Send, User } from "lucide-react";
 import { useState } from "react";
 
-import { siteConfig } from "@/constants";
+import { siteConfig } from "@/config/site";
 import { useTranslations } from "@/hooks/useTranslations";
 import { cn } from "@/lib/utils";
 
