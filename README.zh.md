@@ -51,7 +51,7 @@
 - 結構化資料
 - 多語言 SEO
 
-## ���️ 技術棧
+## 🛠️ 技術棧
 
 - **框架:** [Next.js 15](https://nextjs.org/)
 - **樣式:** [Tailwind CSS](https://tailwindcss.com/)
