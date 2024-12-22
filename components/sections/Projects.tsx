@@ -62,7 +62,7 @@ export default function Projects() {
           {t.projects.title}
         </motion.h2>
 
-        <div className="mt-6 flex justify-center gap-3">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           {categories.map((category) => (
             <button
               key={category.value}
@@ -84,7 +84,7 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(380px,380px))] justify-center gap-8"
+        className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(min(100%,380px),380px))] justify-center gap-8"
       >
         {filteredProjects.map((project) => (
           <PreviewCard
