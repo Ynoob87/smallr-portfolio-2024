@@ -5,6 +5,7 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
+  category: string;
   image: string;
   links?: {
     demo?: string;
@@ -85,6 +86,10 @@ export interface Translation {
         description: string;
       };
     };
+  };
+  categories: {
+    all: string;
+    web: string;
   };
   contact: {
     title: string;

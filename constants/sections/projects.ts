@@ -8,6 +8,7 @@ export function useProjects(): Project[] {
     {
       title: t.projects.items.portfolio.title,
       description: t.projects.items.portfolio.description,
+      category: "web",
       tags: ["Next.js", "TypeScript", "Tailwind"],
       image: "/projects/Portfolio-Website.png",
       links: {
@@ -18,6 +19,7 @@ export function useProjects(): Project[] {
     {
       title: t.projects.items.aboutSmallr.title,
       description: t.projects.items.aboutSmallr.description,
+      category: "web",
       tags: ["Next.js", "TypeScript", "Tailwind"],
       image: "/projects/About-Smallr-Website.png",
       links: {

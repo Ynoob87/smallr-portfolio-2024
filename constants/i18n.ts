@@ -51,7 +51,7 @@ export const translations: Record<"en" | "zh", Translation> = {
       viewDemo: "訪問網站",
       viewCode: "查看代碼",
       showMore: "顯示更多",
-      showLess: "收起",
+      showLess: "顯示更少",
       items: {
         portfolio: {
           title: "個人作品集",
@@ -64,6 +64,10 @@ export const translations: Record<"en" | "zh", Translation> = {
             "使用 Next.js、TypeScript 和 Tailwind CSS 構建的個人網站，展示我的背景、興趣和開發技能。採用現代單頁設計，融合了我對動漫的熱愛和對開發的熱情。",
         },
       },
+    },
+    categories: {
+      all: "全部",
+      web: "網頁開發",
     },
     contact: {
       title: "聯絡我",
@@ -159,6 +163,10 @@ export const translations: Record<"en" | "zh", Translation> = {
             "A personal website built with Next.js, TypeScript, and Tailwind CSS, designed to showcase my background, interests, and development skills. It features a modern single-page design, integrates my love for ANIME, and highlights my passion for DEVELOPMENT.",
         },
       },
+    },
+    categories: {
+      all: "All",
+      web: "Web Development",
     },
     contact: {
       title: "Get in Touch",
