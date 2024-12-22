@@ -2,7 +2,7 @@
 
 <div align="center">
   <p align="center">
-    使用 Next.js 15 和 Tailwind CSS 打造的現代響應式個人作品集網站
+    使用 Next.js 15 和 Tailwind CSS 打造的現代響應式個人作品集網站，具有流暢動畫和精緻的 UI/UX 設計
   </p>
   <p align="center">
     <a href="https://smallr-portfolio.vercel.app">預覽網站</a>
@@ -24,16 +24,17 @@
 - 基於 URL 的語言切換
 - 自動語言偵測
 - 完整的翻譯系統
-- 保持語言狀態的頁面導航
+- 智能語言導航
 
 ### 🎨 現代設計
 
 - 完全響應式佈局
 - 深色/淺色主題支援
-- 流暢的動畫效果
-- 簡潔的使用者介面
-- Framer Motion 動畫
+- Framer Motion 流暢動畫
+- 簡潔直觀的使用者介面
+- 互動式專案卡片與縮放預覽
 - 客製化 404 頁面
+- 精緻的圖片模態框與背景模糊效果
 
 ### ⚡ 效能優化
 
@@ -42,6 +43,7 @@
 - 自動圖片優化
 - 路由預加載
 - 客戶端導航
+- 優化的圖片載入
 
 ### 🔍 SEO 優化
 

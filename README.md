@@ -2,7 +2,7 @@
 
 <div align="center">
   <p align="center">
-    A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS
+    A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS, featuring smooth animations and a polished UI/UX design
   </p>
   <p align="center">
     <a href="https://smallr-portfolio.vercel.app">Live Demo</a>
@@ -24,16 +24,17 @@
 - URL-based language switching
 - Automatic language detection
 - Complete translation system
-- Language-preserved navigation
+- Language-aware navigation
 
 ### 🎨 Modern Design
 
 - Fully responsive layout
 - Dark/Light theme support
-- Smooth animations
-- Clean user interface
-- Framer Motion animations
+- Smooth animations with Framer Motion
+- Clean and intuitive UI
+- Interactive project cards with zoom preview
 - Custom 404 page
+- Polished image modals with backdrop blur
 
 ### ⚡ Performance
 
@@ -42,6 +43,7 @@
 - Automatic image optimization
 - Route prefetching
 - Client-side navigation
+- Optimized image loading
 
 ### 🔍 SEO Optimization
 
@@ -49,7 +51,7 @@
 - Sitemap generation
 - Robots.txt configuration
 - Structured data
-- Multilingual SEO
+- Multi-language SEO
 
 ## 🛠️ Tech Stack
 
