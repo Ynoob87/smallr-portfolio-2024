@@ -52,7 +52,7 @@ interface CVContent {
 
 const content: Record<Language, CVContent> = {
   zh: {
-    title: "履歷",
+    title: "履��",
     name: "吳宸麒",
     role: "資訊工程系學生 | 全端開發者",
     contact: "聯絡方式",

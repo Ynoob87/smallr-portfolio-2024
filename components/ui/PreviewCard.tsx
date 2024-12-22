@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 import { useTranslations } from "@/hooks/useTranslations";
 
@@ -69,7 +70,7 @@ export default function PreviewCard({
 
         {/* 內容區域 */}
         <div className="space-y-2.5">
-          {/* 標題和描述 */}
+          {/* 標題��述 */}
           <div className="space-y-1">
             <h2 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
               {title}
@@ -131,50 +132,38 @@ export default function PreviewCard({
 
       {/* 圖片預覽模態框 */}
       {isPreviewOpen && (
-        <div
-          className="fixed inset-0 z-50 flex flex-col bg-white/95 backdrop-blur-sm dark:bg-neutral-900/95"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/80 p-4 md:p-8"
           onClick={handleModalClick}
         >
-          {/* 頂部導航欄 */}
-          <div className="flex h-16 items-center px-6">
-            <button
-              className="flex items-center gap-2 text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
-              onClick={handleModalClick}
-            >
-              <svg
-                className="size-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                />
-              </svg>
-              <span>Back</span>
-            </button>
-          </div>
-
           {/* 圖片容器 */}
-          <div
-            className="relative flex flex-1 items-center justify-center p-8"
-            onClick={(e) => e.stopPropagation()}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 30,
+            }}
+            className="relative max-w-5xl w-full aspect-[2/1] overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10"
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
-            <div className="relative size-full max-w-5xl rounded-sm">
-              <Image
-                src={imageSrc}
-                alt={imageAlt}
-                className="rounded-sm object-contain"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                priority
-              />
-            </div>
-          </div>
-        </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent" />
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              className="rounded-xl object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+              priority
+              quality={95}
+            />
+            <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
+          </motion.div>
+        </motion.div>
       )}
     </>
   );
