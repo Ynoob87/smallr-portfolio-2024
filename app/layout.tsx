@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 
@@ -57,6 +58,7 @@ export default function RootLayout({
             <main className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24">
               {children}
               <SpeedInsights />
+              <Analytics />
             </main>
             <Footer />
           </div>
