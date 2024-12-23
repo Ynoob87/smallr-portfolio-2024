@@ -13,7 +13,7 @@ export function useProjects(): Project[] {
       image: "/projects/Portfolio-Website.png",
       links: {
         demo: "https://smallr-portfolio.vercel.app",
-        github: "https://github.com/Ynoob87/smallr",
+        github: "https://github.com/Ynoob87/smallr-portfolio",
       },
     },
     {
