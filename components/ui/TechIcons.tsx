@@ -68,7 +68,7 @@ export const TECH_ICONS = {
     Icon: SiGoogle,
   },
 
-  "Visual Studio": {
+  VisualStudio: {
     Icon: BiLogoVisualStudio,
   },
 } as const;
