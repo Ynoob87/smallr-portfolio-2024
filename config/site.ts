@@ -25,5 +25,6 @@ export const siteConfig: SiteConfig = {
     github: "https://github.com/Ynoob87",
     linkedin: "https://www.linkedin.com/in/alaner652",
     email: "hhgg12661@gmail.com",
+    osu: "https://osu.ppy.sh/users/30500236",
   },
 };

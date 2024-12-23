@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { SiOsu } from "react-icons/si";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 import { siteConfig } from "@/config/site";
@@ -38,6 +39,12 @@ export default function Hero() {
       href: siteConfig.links.linkedin,
       icon: Linkedin,
       label: t.hero.buttons.linkedin,
+      target: "_blank",
+    },
+    {
+      href: siteConfig.links.osu,
+      icon: SiOsu,
+      label: "osu!",
       target: "_blank",
     },
     {

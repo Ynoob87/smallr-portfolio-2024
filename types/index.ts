@@ -135,5 +135,6 @@ export interface SiteConfig {
     github: string;
     linkedin: string;
     email: string;
+    osu: string;
   };
 }
