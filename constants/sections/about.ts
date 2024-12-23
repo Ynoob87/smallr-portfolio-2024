@@ -13,6 +13,6 @@ export const techGroups = [
   },
   {
     title: "Other",
-    icons: ["VisualStudio", "Arduino", "Google"],
+    icons: ["VisualStudio", "Arduino"],
   },
 ] as const;
