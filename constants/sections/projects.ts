@@ -27,5 +27,27 @@ export function useProjects(): Project[] {
         github: "https://github.com/Ynoob87/about-small",
       },
     },
+    {
+      title: "Bleach Shinigami Abilities",
+      description:
+        "This is a roblox project inspired by the anime BLEACH from the shinigami's abilities",
+      category: "roblox",
+      tags: ["Roblox", "Lua"],
+      image: "/projects/Project-Bleach-1.png",
+      links: {
+        demo: "https://imgur.com/qvgvWO9",
+      },
+    },
+    {
+      title: "Bleach Quincy Abilities",
+      description:
+        "This is a roblox project inspired by the anime BLEACH from the quincy's abilities",
+      category: "roblox",
+      tags: ["Roblox", "Lua"],
+      image: "/projects/Project-Bleach-2.png",
+      links: {
+        demo: "https://imgur.com/AnSrCEY",
+      },
+    },
   ];
 }
