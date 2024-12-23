@@ -5,14 +5,14 @@ export const techGroups = [
   },
   {
     title: "Backend",
-    icons: ["Node.js", "MongoDB"],
+    icons: ["Node.js", "Python", "MongoDB", "Firebase"],
   },
   {
     title: "Game Dev",
-    icons: ["Lua", "Roblox"],
+    icons: ["Lua", "Roblox", "UnrealEngine", "C++"],
   },
   {
     title: "Other",
-    icons: ["Python", "C++"],
+    icons: ["Visual Studio", "Arduino", "Google"],
   },
 ] as const;

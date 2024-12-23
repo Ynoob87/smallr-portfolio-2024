@@ -1,3 +1,4 @@
+import { BiLogoVisualStudio } from "react-icons/bi";
 import {
   SiReact,
   SiNextdotjs,
@@ -9,6 +10,10 @@ import {
   SiRoblox,
   SiPython,
   SiCplusplus,
+  SiUnrealengine,
+  SiFirebase,
+  SiArduino,
+  SiGoogle,
 } from "react-icons/si";
 
 export const TECH_ICONS = {
@@ -26,12 +31,19 @@ export const TECH_ICONS = {
     Icon: SiTailwindcss,
   },
 
+  UnrealEngine: {
+    Icon: SiUnrealengine,
+  },
+
   // 後端技術
   "Node.js": {
     Icon: SiNodedotjs,
   },
   MongoDB: {
     Icon: SiMongodb,
+  },
+  Firebase: {
+    Icon: SiFirebase,
   },
 
   // 遊戲開發
@@ -48,6 +60,16 @@ export const TECH_ICONS = {
   },
   "C++": {
     Icon: SiCplusplus,
+  },
+  Arduino: {
+    Icon: SiArduino,
+  },
+  Google: {
+    Icon: SiGoogle,
+  },
+
+  "Visual Studio": {
+    Icon: BiLogoVisualStudio,
   },
 } as const;
 
