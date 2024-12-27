@@ -71,7 +71,7 @@ const content: Record<Language, CVContent> = {
     graduation: "國中畢業",
     projects: "專案經驗",
     robloxProject: "Roblox 遊戲開發",
-    robloxDesc: "獨立開發多個遊戲專案，累計獲得超過 300 美元和10萬Robux收益。",
+    robloxDesc: "獨立開發多個遊戲專案，累計獲得超過 500 美元和10萬Robux收益。",
     personalSite: "個人網站開發",
     siteDesc: "使用 Next.js 和 Tailwind CSS 開發作品集網站，實現響應式設計。",
     printCV: "列印履歷",
@@ -135,7 +135,7 @@ const content: Record<Language, CVContent> = {
       {
         title: "Roblox Game Development",
         description:
-          "Independently developed multiple game projects, earning over $300 USD and 100k Robux in revenue",
+          "Independently developed multiple game projects, earning over $500 USD and 100k Robux in revenue",
         period: "2019 - Present",
       },
     ],
@@ -213,7 +213,7 @@ export default function CV() {
   return (
     <main className="container mx-auto px-4 py-6 sm:px-6 sm:py-8">
       {/* 頂導航 */}
-      <div className="mb-6 flex flex-col items-center justify-between gap-4 sm:mb-8 sm:flex-row sm:gap-0">
+      <div className="mb-6 flex flex-row items-center justify-between gap-4 sm:mb-8 sm:gap-0">
         <Link
           href={`/${language}/#hero`}
           className="inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
@@ -252,11 +252,12 @@ export default function CV() {
           </h2>
           <div className="space-y-2 text-neutral-700 dark:text-neutral-300">
             <p>
+              ✉️ Gmail: {""}
               <a
                 href={`mailto:${siteConfig.links.email}`}
-                className="hover:underline"
+                className="text-blue-600 hover:underline dark:text-blue-400"
               >
-                ✉️ {siteConfig.links.email}
+                {siteConfig.links.email}
               </a>
             </p>
             <p>
