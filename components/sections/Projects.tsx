@@ -17,6 +17,7 @@ export default function Projects() {
   const [visibleCount, setVisibleCount] = useState(6);
   const initialCount = 6;
 
+  // 導出項目分類
   const categories = [
     { value: "all", label: t.categories.all },
     { value: "web", label: t.categories.web },

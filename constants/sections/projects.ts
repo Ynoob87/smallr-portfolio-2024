@@ -1,6 +1,7 @@
 import { useTranslations } from "@/hooks/useTranslations";
 import type { Project } from "@/types";
 
+// 導出項目卡片資料 (如果要套用翻譯請在i18n.ts中添加資訊)
 export function useProjects(): Project[] {
   const t = useTranslations();
 

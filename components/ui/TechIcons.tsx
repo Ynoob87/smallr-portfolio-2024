@@ -16,8 +16,8 @@ import {
   SiGoogle,
 } from "react-icons/si";
 
+// 導出技術圖標
 export const TECH_ICONS = {
-  // 主要技術
   React: {
     Icon: SiReact,
   },
@@ -30,12 +30,9 @@ export const TECH_ICONS = {
   Tailwind: {
     Icon: SiTailwindcss,
   },
-
   UnrealEngine: {
     Icon: SiUnrealengine,
   },
-
-  // 後端技術
   "Node.js": {
     Icon: SiNodedotjs,
   },
@@ -45,16 +42,12 @@ export const TECH_ICONS = {
   Firebase: {
     Icon: SiFirebase,
   },
-
-  // 遊戲開發
   Lua: {
     Icon: SiLua,
   },
   Roblox: {
     Icon: SiRoblox,
   },
-
-  // 其他語言
   Python: {
     Icon: SiPython,
   },
@@ -73,6 +66,7 @@ export const TECH_ICONS = {
   },
 } as const;
 
+// 獲取技術圖標
 export const getTechIcon = (tech: keyof typeof TECH_ICONS) => {
   const iconData = TECH_ICONS[tech];
   if (!iconData) return <span>{tech[0]}</span>;
@@ -80,6 +74,7 @@ export const getTechIcon = (tech: keyof typeof TECH_ICONS) => {
   return <Icon className="size-4 text-neutral-700 dark:text-neutral-300" />;
 };
 
+// 獲取技術圖標列表
 export const techIcons = Object.entries(TECH_ICONS).map(([name, { Icon }]) => ({
   name,
   icon: Icon,
