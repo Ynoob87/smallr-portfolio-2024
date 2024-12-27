@@ -9,7 +9,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { siteConfig } from "@/config/site";
 import { useTranslations } from "@/hooks/useTranslations";
 
-import SocialLinks from "../ui/socialLinks";
+import SocialLinks from "../ui/SocialLinks";
 
 export default function Hero() {
   const t = useTranslations();
