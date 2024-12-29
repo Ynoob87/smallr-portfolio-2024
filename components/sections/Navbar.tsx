@@ -17,7 +17,6 @@ const DesktopNav = ({ pathname }: { pathname: string }) => {
 
   return (
     <div className="relative backdrop-blur-xl">
-      <div className="absolute inset-0 bg-white/70 dark:bg-black/70" />
       <nav className="relative mx-auto flex h-16 max-w-4xl items-center justify-between px-6">
         <Link
           href={`/${locale}/#hero`}
