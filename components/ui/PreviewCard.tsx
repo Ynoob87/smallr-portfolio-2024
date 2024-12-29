@@ -2,17 +2,30 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, ReactNode } from "react";
 import { motion } from "framer-motion";
 
 import { useTranslations } from "@/hooks/useTranslations";
 
-import { PreviewCardProps } from "@/types";
+//import { PreviewCardProps } from "@/types";
+
+interface PreviewCardProps {
+  title: string;
+  description?: string;
+  imageSrc: string;
+  imageAlt?: string;
+  videoSrc?: string;
+  techStack?: { icon: React.ReactNode; label: string }[];
+  actions?: { icon?: ReactNode; label: string; href: string }[];
+  className?: string;
+}
+
 export default function PreviewCard({
   title,
   description,
   imageSrc,
   imageAlt = "",
+  videoSrc,
   techStack = [],
   actions = [],
   className = "",
@@ -49,8 +62,27 @@ export default function PreviewCard({
           className="group/image relative mb-3 aspect-[2/1] cursor-zoom-in overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-800"
           onClick={() => setIsPreviewOpen(true)}
         >
-          <Image src={imageSrc} alt={imageAlt} fill className="object-cover" />
-          {/* 添加點擊提示 */}
+          {videoSrc ? (
+            <video
+              src={videoSrc}
+              className="h-full w-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              // 禁用所有控制和互動
+              controls={false}
+              style={{ pointerEvents: "none" }}
+            />
+          ) : (
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              className="object-cover"
+            />
+          )}
+          {/* 點擊提示 */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover/image:bg-black/20 group-hover/image:opacity-100">
             <svg
               className="size-8 text-white"
@@ -70,7 +102,7 @@ export default function PreviewCard({
 
         {/* 內容區域 */}
         <div className="space-y-2.5">
-          {/* 標題��述 */}
+          {/* 標題描述 */}
           <div className="space-y-1">
             <h2 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
               {title}
@@ -139,7 +171,6 @@ export default function PreviewCard({
           className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/80 p-4 md:p-8"
           onClick={handleModalClick}
         >
-          {/* 圖片容器 */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -151,17 +182,32 @@ export default function PreviewCard({
             className="relative max-w-5xl w-full aspect-[2/1] overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10"
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent" />
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              className="rounded-xl object-cover"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-              priority
-              quality={95}
-            />
-            <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
+            {videoSrc ? (
+              <div className="absolute inset-0">
+                <video
+                  src={videoSrc}
+                  className="h-full w-full object-cover"
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  onClick={(e) => e.stopPropagation()}
+                  style={{ position: "absolute", inset: 0 }}
+                />
+              </div>
+            ) : (
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                className="rounded-xl object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                priority
+                quality={95}
+              />
+            )}
+            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
           </motion.div>
         </motion.div>
       )}
