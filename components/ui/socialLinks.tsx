@@ -8,7 +8,7 @@ import { useTranslations } from "@/hooks/useTranslations";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { SiOsu } from "react-icons/si";
 
-const socialLinks = () => {
+export default function SocialLinks() {
   const t = useTranslations();
 
   const socialLinks = [
@@ -62,6 +62,4 @@ const socialLinks = () => {
       </div>
     </>
   );
-};
-
-export default socialLinks;
+}
