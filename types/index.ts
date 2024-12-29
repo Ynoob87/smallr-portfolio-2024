@@ -6,7 +6,8 @@ export interface Project {
   description: string;
   tags: string[];
   category: string;
-  image: string;
+  image?: string;
+  video?: string;
   links?: {
     demo?: string;
     github?: string;
@@ -24,6 +25,7 @@ export interface PreviewCardProps {
   description?: string;
   imageSrc: string;
   imageAlt?: string;
+  videoSrc?: string;
   techStack?: { icon: ReactNode; label: string }[];
   actions?: { icon?: ReactNode; label: string; href: string }[];
   className?: string;
