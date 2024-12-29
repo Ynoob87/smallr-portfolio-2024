@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Github, Linkedin, Mail } from "lucide-react";
 import React from "react";
+import { SiOsu } from "react-icons/si";
 
 import { siteConfig } from "@/config/site";
 import { useTranslations } from "@/hooks/useTranslations";
-import { Github, Linkedin, Mail } from "lucide-react";
-import { SiOsu } from "react-icons/si";
 
 const SocialLinks = () => {
   const t = useTranslations();

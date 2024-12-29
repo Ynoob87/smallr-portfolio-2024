@@ -92,8 +92,8 @@ export default function Projects() {
             key={project.title}
             title={project.title}
             description={project.description}
-            imageSrc={project.image}
-            videoSrc={project.video}
+            imageSrc={project.image || ""}
+            videoSrc={project.video || ""}
             techStack={project.tags.map((tag) => ({
               icon: getTechIcon(tag as keyof typeof TECH_ICONS),
               label: tag,
