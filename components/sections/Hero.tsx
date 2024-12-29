@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
-// import SocialLinks from "@/components/ui/SocialLinks";
+import SocialLinks from "@/components/SocialLinks";
 import { siteConfig } from "@/config/site";
 import { useTranslations } from "@/hooks/useTranslations";
 
@@ -96,7 +96,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {/* <SocialLinks /> */}
+            <SocialLinks />
 
             {/* CV 按鈕 */}
             <motion.a
