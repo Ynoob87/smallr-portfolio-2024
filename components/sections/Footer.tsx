@@ -1,6 +1,5 @@
+import SocialLinks from "@/components/ui/SocialLinks";
 import { siteConfig } from "@/config/site";
-
-import SocialLinks from "../ui/SocialLinks";
 
 export default function Footer() {
   return (
