@@ -6,9 +6,10 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
-import SocialLinks from "@/components/ui/SocialLinks";
 import { siteConfig } from "@/config/site";
 import { useTranslations } from "@/hooks/useTranslations";
+
+import SocialLinks from "../ui/SocialLinks";
 
 export default function Hero() {
   const t = useTranslations();
