@@ -66,12 +66,12 @@ export default function PreviewCard({
           {videoSrc ? (
             <div className="relative h-full w-full">
               <Image
-                src={`https://img.youtube.com/vi/${
-                  videoSrc.split("v=")[1]
-                }/maxresdefault.jpg`}
+                src={`https://img.youtube.com/vi/${videoSrc}/maxresdefault.jpg`}
                 alt={imageAlt || title}
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                quality={95}
               />
               <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover/image:bg-black/30" />
             </div>
@@ -180,15 +180,13 @@ export default function PreviewCard({
               stiffness: 300,
               damping: 30,
             }}
-            className="relative max-w-5xl w-full aspect-[2/1] overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10"
+            className="relative w-full max-h-[90vh] max-w-[90vw] aspect-video overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10"
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
             {videoSrc ? (
               <iframe
-                src={`https://www.youtube.com/embed/${
-                  videoSrc.split("v=")[1]
-                }?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1`}
+                src={`https://www.youtube.com/embed/${videoSrc}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1`}
                 className="absolute inset-0 h-full w-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

@@ -31,21 +31,44 @@ export function useProjects(): Project[] {
     },
     // Roblox Projects
     {
+      title: "Judgement Cut End Recreation",
+      description: `Devil May Cry Vergil Abilitie "Judgement Cut End" `,
+      category: "roblox",
+      tags: ["Roblox", "Lua"],
+      video: "5_mo6uu00O4",
+    },
+    {
+      title: "Custom Bangboo Character Model",
+      description: "ZZZ Bangboo Custom Mesh Character & Idle Animation",
+      category: "roblox",
+      tags: ["Roblox", "Lua"],
+      video: "rcDSce4aChg",
+    },
+    {
+      title: "Parry-Based Combat System ",
+      description:
+        "This Roblox project explores the design and implementation of a combat system inspired by the Parry mechanic, focusing on strategic player interactions and real-time decision-making. It draws inspiration from the anime BLEACH, utilizing Shinigami abilities to enhance gameplay dynamics and challenge.",
+      category: "roblox",
+      tags: ["Roblox", "Lua"],
+      image: "/projects/thumbnails/bleach-shinigami.jpg",
+      video: "vE8vWv9u99k",
+    },
+    {
       title: "Bleach Shinigami Abilities",
       description:
         "This is a roblox project inspired by the anime BLEACH from the shinigami's abilities",
       category: "roblox",
       tags: ["Roblox", "Lua"],
       image: "/projects/thumbnails/bleach-shinigami.jpg",
-      video: "watch?v=mHXd9876MWQ",
+      video: "nUk5FNVyV2I",
     },
-    /* {
+    {
       title: "Bleach Quincy Abilities",
       description:
         "This is a roblox project inspired by the anime BLEACH from the quincy's abilities",
       category: "roblox",
       tags: ["Roblox", "Lua"],
-      video: "",
+      video: "xjJSrZ468ME",
     },
     {
       title: "Bleach Arrancar Abilities",
@@ -53,22 +76,7 @@ export function useProjects(): Project[] {
         "This is a roblox project inspired by the anime BLEACH from the arrancar's abilities",
       category: "roblox",
       tags: ["Roblox", "Lua"],
-      video: "",
+      video: "1TGTTg14rSA",
     },
-    {
-      title: "Custom Bangboo Character Model",
-      description: "ZZZ Bangboo Custom Mesh Character & Idle Animation",
-      category: "roblox",
-      tags: ["Roblox", "Lua"],
-      video: "",
-    },
-
-    {
-      title: "Judgement Cut End Recreation",
-      description: `Devil May Cry Vergil Abilitie "Judgement Cut End" `,
-      category: "roblox",
-      tags: ["Roblox", "Lua"],
-      video: "",
-    }, */
   ];
 }
