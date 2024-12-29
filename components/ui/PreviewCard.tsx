@@ -6,6 +6,7 @@ import React, { useState, useEffect, useRef, ReactNode } from "react";
 import { motion } from "framer-motion";
 
 import { useTranslations } from "@/hooks/useTranslations";
+import { video } from "framer-motion/client";
 
 //import { PreviewCardProps } from "@/types";
 
@@ -63,17 +64,17 @@ export default function PreviewCard({
           onClick={() => setIsPreviewOpen(true)}
         >
           {videoSrc ? (
-            <video
-              src={videoSrc}
-              className="h-full w-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-              // 禁用所有控制和互動
-              controls={false}
-              style={{ pointerEvents: "none" }}
-            />
+            <div className="relative h-full w-full">
+              <Image
+                src={`https://img.youtube.com/vi/${
+                  videoSrc.split("v=")[1]
+                }/maxresdefault.jpg`}
+                alt={imageAlt || title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover/image:bg-black/30" />
+            </div>
           ) : (
             <Image
               src={imageSrc}
@@ -184,18 +185,14 @@ export default function PreviewCard({
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
             {videoSrc ? (
-              <div className="absolute inset-0">
-                <video
-                  src={videoSrc}
-                  className="h-full w-full object-cover"
-                  controls
-                  autoPlay
-                  loop
-                  playsInline
-                  onClick={(e) => e.stopPropagation()}
-                  style={{ position: "absolute", inset: 0 }}
-                />
-              </div>
+              <iframe
+                src={`https://www.youtube.com/embed/${
+                  videoSrc.split("v=")[1]
+                }?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1`}
+                className="absolute inset-0 h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             ) : (
               <Image
                 src={imageSrc}
