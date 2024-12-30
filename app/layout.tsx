@@ -19,10 +19,10 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: siteConfig.keywords.join(", "),
   creator: siteConfig.name,
+  ogImage: "/avatar.jpg",
   openGraph: {
     type: "website",
     url: siteConfig.url,
-    ogImage: "/avatar.jpg",
     siteName: siteConfig.name,
   },
   robots: {
