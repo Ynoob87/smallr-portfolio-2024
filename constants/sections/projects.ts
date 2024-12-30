@@ -35,7 +35,7 @@ export function useProjects(): Project[] {
       description: `Devil May Cry Vergil Abilitie "Judgement Cut End" `,
       category: "roblox",
       tags: ["Roblox", "Lua"],
-      video: "5_mo6uu00O4",
+      video: "MXsDfMxm0rs",
     },
     {
       title: "Custom Bangboo Character Model",
