@@ -127,7 +127,7 @@ export interface SiteConfig {
   description: string;
   keywords: string[];
   formspree: string;
-  ogImage: string;
+  Images: string[];
   locales: Array<{
     locale: Locale;
     label: string;
