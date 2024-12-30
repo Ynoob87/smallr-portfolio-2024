@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteConfig.url,
+    ogImage: "/avater.jpg",
     siteName: siteConfig.name,
   },
   robots: {
