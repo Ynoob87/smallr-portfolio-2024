@@ -9,6 +9,11 @@ export const siteConfig: SiteConfig = {
   keywords: [
     "small R",
     "portfolio",
+    "Lua",
+    "luau",
+    "roblox",
+    "roblox studio",
+    "full stack devloper",
     "web development",
     "frontend developer",
     "React",
@@ -16,7 +21,6 @@ export const siteConfig: SiteConfig = {
     "TypeScript",
   ],
   formspree: process.env.NEXT_PUBLIC_FORMSPREE_ID || "",
-  ogImage: "/og.png",
   locales: [
     { locale: "en", label: "English" },
     { locale: "zh", label: "繁體中文" },
