@@ -180,27 +180,29 @@ export default function PreviewCard({
               stiffness: 300,
               damping: 30,
             }}
-            className="relative w-full max-h-[90vh] max-w-[90vw] aspect-video overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10"
+            className="relative w-full max-h-[85vh] max-w-[85vw] overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10"
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
             {videoSrc ? (
               <iframe
                 src={`https://www.youtube.com/embed/${videoSrc}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1`}
-                className="absolute inset-0 h-full w-full"
+                className="aspect-video w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             ) : (
-              <Image
-                src={imageSrc}
-                alt={imageAlt}
-                className="rounded-xl object-cover"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                priority
-                quality={95}
-              />
+              <div className="aspect-video relative w-full">
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="rounded-xl object-contain"
+                  fill
+                  sizes="(max-width: 768px) 85vw, (max-width: 1200px) 85vw, 85vw"
+                  priority
+                  quality={95}
+                />
+              </div>
             )}
             <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
           </motion.div>
