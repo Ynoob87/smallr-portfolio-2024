@@ -180,19 +180,19 @@ export default function PreviewCard({
               stiffness: 300,
               damping: 30,
             }}
-            className="relative w-full max-h-[85vh] max-w-[85vw] overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10"
+            className="relative w-[1920px] aspect-[16/9] max-h-[85vh] max-w-[85vw] overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10"
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
             {videoSrc ? (
               <iframe
                 src={`https://www.youtube.com/embed/${videoSrc}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1`}
-                className="aspect-video w-full h-full"
+                className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             ) : (
-              <div className="aspect-video relative w-full">
+              <div className="w-full h-full flex items-center justify-center">
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
