@@ -56,7 +56,7 @@ const content: Record<Language, CVContent> = {
     contact: "聯絡方式",
     introduction: "簡介",
     introText: [
-      "我目前就讀於台北城市科技大學五專資訊工程系，擁有 4 年 Roblox 開發經驗。",
+      "我目前就讀於台北城市科技大學五專資訊工程系，擁有 5 年 Roblox 開發經驗。",
       "專精於 Lua 程式設計、遊戲功能開發，同時也在學習全端開發，熟悉 Next.js 和 Tailwind CSS。",
     ],
     skills: "技能專長",
@@ -100,7 +100,7 @@ const content: Record<Language, CVContent> = {
     contact: "Contact Information",
     introduction: "Introduction",
     introText: [
-      "I am currently a student at Taipei City University of Science and Technology, majoring in Information Engineering, with 4 years of Roblox development experience.",
+      "I am currently a student at Taipei City University of Science and Technology, majoring in Information Engineering, with 5 years of Roblox development experience.",
       "Specialized in Lua programming and game feature development, while also learning full-stack development with proficiency in Next.js and Tailwind CSS.",
     ],
     skills: "Skills",
