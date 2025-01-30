@@ -71,7 +71,7 @@ const content: Record<Language, CVContent> = {
     graduation: "國中畢業",
     projects: "專案經驗",
     robloxProject: "Roblox 遊戲開發",
-    robloxDesc: "獨立開發多個遊戲專案，累計獲得超過 500 美元和10萬Robux收益。",
+    robloxDesc: "獨立開發多個遊戲專案。",
     personalSite: "個人網站開發",
     siteDesc: "使用 Next.js 和 Tailwind CSS 開發作品集網站，實現響應式設計。",
     printCV: "列印履歷",
@@ -115,8 +115,7 @@ const content: Record<Language, CVContent> = {
     graduation: "Junior High School Graduate",
     projects: "Project Experience",
     robloxProject: "Roblox Game Development",
-    robloxDesc:
-      "Independently developed multiple game projects, earning over $300 USD and 100k Robux in revenue.",
+    robloxDesc: "Independently developed multiple game projects.",
     personalSite: "Personal Website Development",
     siteDesc:
       "Developed a portfolio website using Next.js and Tailwind CSS with responsive design.",
