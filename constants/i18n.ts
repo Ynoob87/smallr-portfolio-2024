@@ -1,6 +1,5 @@
 import type { Translation } from "@/types";
 
-// 導出翻譯 (如果要添加新資料請記得在types/index.ts中添加資料)
 export const translations: Record<"en" | "zh", Translation> = {
   zh: {
     nav: {
