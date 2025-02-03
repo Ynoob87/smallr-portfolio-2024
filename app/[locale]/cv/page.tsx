@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import React from "react";
 
 export default function CVPage() {
   const pathname = usePathname();
@@ -44,135 +45,119 @@ export default function CVPage() {
       : "About Me - Chen-Chi Wu (small R)",
     roles: isZh
       ? [
-          `${emoji.game} Roblox 遊戲開發者`,
-          `${emoji.code} 全端開發學習者`,
-          `${emoji.teach} 技術導師`,
-          `${emoji.promote} 社群推廣者`,
+          `${emoji.game} Roblox 開發者`,
+          `${emoji.code} 全端工程師`,
+          `${emoji.teach} 技術教學`,
+          `${emoji.promote} 社群經營`,
         ]
       : [
-          `${emoji.game} Roblox Game Developer`,
-          `${emoji.code} Full-Stack Developer`,
-          `${emoji.teach} Tech Mentor`,
-          `${emoji.promote} Community Advocate`,
+          `${emoji.game} Roblox Developer`,
+          `${emoji.code} Full-Stack Engineer`,
+          `${emoji.teach} Tech Educator`,
+          `${emoji.promote} Community Builder`,
         ],
     intro: isZh
-      ? "你好，我是 吳宸麒 (small R)，目前 16 歲，就讀台北城市科技大學五專資訊工程系。我是一名 熱愛技術、勇於挑戰、樂於分享 的開發者，擁有 5 年 Roblox 開發經驗，並積極學習 全端開發 (Next.js)，希望能將技術與創意結合，打造更有價值的作品！"
-      : "Hi, I'm Chen-Chi Wu (small R), a 16-year-old student at Taipei City University of Science and Technology. As a developer who loves technology, embraces challenges, and enjoys sharing, I have 5 years of Roblox development experience and am actively learning full-stack development (Next.js). I aim to combine technology and creativity to create more valuable projects!",
+      ? "你好，我是吳宸麒 (small R)，就讀台北城市科技大學資訊工程系。擁有 5 年 Roblox 遊戲開發經驗，專注於系統設計與效能優化。目前正積極投入 Next.js 全端開發，致力於將遊戲開發的創意思維融入網頁應用。"
+      : "Hi, I'm Chen-Chi Wu (small R), studying Information Engineering at Taipei City University of Science and Technology. With 5 years of Roblox game development experience focusing on system design and performance optimization. Currently diving into full-stack development with Next.js, aiming to bring creative game development concepts into web applications.",
     mission: {
       title: isZh
-        ? `${emoji.mission} 我的使命：推廣 Roblox 開發！`
-        : `${emoji.mission} My Mission: Promoting Roblox Development!`,
+        ? `${emoji.mission} 推廣遊戲開發，培育新世代開發者`
+        : `${emoji.mission} Promoting Game Development, Nurturing Next-Gen Developers`,
       content: isZh
-        ? "我的 Roblox 技術始終保持最新，並持續進步。我希望透過自己的能力 影響台灣的 Roblox 開發環境，讓更多人認識這個強大的遊戲開發平台。我深信 Roblox 是初學者最好的遊戲開發入門選擇，因為我自己就是從這裡開始，一步步成長到現在。"
-        : "I keep my Roblox skills up-to-date and continuously improve. I aim to make this powerful game development platform more accessible to everyone. I firmly believe that Roblox is the best entry point for beginners in game development, as I started here myself and grew step by step to where I am now.",
+        ? "致力於推廣 Roblox 開發技術，分享遊戲開發經驗與知識。期望透過實戰經驗與教學，協助更多台灣開發者認識並精通這個強大的遊戲開發平台，共同打造優質的遊戲作品。"
+        : "Dedicated to promoting Roblox development technologies and sharing game development expertise. Through practical experience and teaching, I aim to help more developers master this powerful game development platform and create outstanding games together.",
     },
     whyMe: {
-      title: isZh
-        ? `${emoji.fire} 為什麼選擇我？`
-        : `${emoji.fire} Why Choose Me?`,
+      title: isZh ? `${emoji.fire} 核心優勢` : `${emoji.fire} Core Strengths`,
       points: [
         {
-          title: isZh ? "5 年遊戲開發經驗" : "5 Years of Game Development",
+          title: isZh ? "遊戲開發專家" : "Game Development Expert",
           content: isZh
-            ? "專注於 Roblox，精通 Lua/Luau，擅長遊戲機制、系統開發與優化，曾參與多個商業級專案。"
-            : "Focused on Roblox, mastered Lua/Luau, specialized in game mechanics, system development and optimization, with commercial project experience.",
+            ? "5 年 Roblox 開發經驗，專精於遊戲系統架構、性能優化與使用者體驗設計，曾主導多個商業專案開發。"
+            : "5 years of Roblox expertise, specializing in game system architecture, performance optimization, and UX design. Led multiple commercial project developments.",
         },
         {
-          title: isZh ? "全端開發實戰" : "Full-Stack Development",
+          title: isZh ? "全端技術棧" : "Full-Stack Capabilities",
           content: isZh
-            ? "學習 Next.js、Tailwind CSS、TypeScript，並已開發個人作品集網站，熟悉前後端整合。"
-            : "Learning Next.js, Tailwind CSS, TypeScript, developed personal portfolio website, familiar with front-end and back-end integration.",
+            ? "熟練運用 Next.js、TypeScript 和 Tailwind CSS 構建現代化網頁應用，注重代碼質量與開發效率。"
+            : "Proficient in building modern web applications with Next.js, TypeScript, and Tailwind CSS, focusing on code quality and development efficiency.",
         },
         {
-          title: isZh
-            ? "創意與實作並重"
-            : "Balancing Creativity & Implementation",
+          title: isZh ? "教學與社群" : "Teaching & Community",
           content: isZh
-            ? "不只是開發者，更是創意實踐者，喜歡將新技術應用到專案，讓產品更具吸引力。"
-            : "Not just a developer, but a creative implementer, enjoying applying new technologies to projects, making products more appealing.",
+            ? "積極分享技術知識，建立開發者社群，協助新手快速成長。擅長將複雜概念轉化為易懂內容。"
+            : "Actively sharing technical knowledge and building developer communities. Skilled at transforming complex concepts into accessible content.",
         },
         {
-          title: isZh ? "樂於學習與教學" : "Eager to Learn & Teach",
+          title: isZh ? "持續創新" : "Continuous Innovation",
           content: isZh
-            ? "不只提升自己，還積極分享知識，參與 Roblox 開發者社群，並擁有部分教學經驗。"
-            : "Not only improving myself but actively sharing knowledge, participating in the Roblox developer community, with some teaching experience.",
-        },
-        {
-          title: isZh ? "持續成長與挑戰" : "Continuous Growth & Challenges",
-          content: isZh
-            ? "從 C++、Python，到 Unreal Engine 5，不斷拓展技術邊界，為未來的開發做好準備。"
-            : "From C++, Python, to Unreal Engine 5, continuously expanding technical boundaries, preparing for future development.",
+            ? "不斷探索新技術，結合 AI 與遊戲開發創新應用，致力於提升開發流程與產品體驗。"
+            : "Constantly exploring new technologies, combining AI with game development innovations, committed to enhancing development processes and product experiences.",
         },
       ],
     },
     projects: {
-      title: isZh ? `${emoji.pin} 近期專案` : `${emoji.pin} Recent Projects`,
+      title: isZh ? `${emoji.pin} 代表作品` : `${emoji.pin} Featured Projects`,
       items: [
         {
-          title: isZh ? "1️⃣ 個人作品集網站" : "1️⃣ Personal Portfolio Website",
+          title: isZh ? "個人技術品牌建設" : "Personal Tech Brand Building",
           points: isZh
             ? [
-                "使用 Next.js + Tailwind CSS 開發",
-                "支援中/英文版本，展示開發作品",
+                "設計開發個人作品集網站，展示技術實力與項目經驗",
+                "建立技術部落格，分享開發心得與最佳實踐",
+                "經營技術社群，定期舉辦線上分享會",
               ]
             : [
-                "Developed with Next.js + Tailwind CSS",
-                "Supports Chinese/English versions, showcasing development works",
+                "Designed and developed portfolio website showcasing technical expertise",
+                "Established tech blog sharing development insights and best practices",
+                "Managing tech community with regular online sharing sessions",
               ],
         },
         {
           title: isZh
-            ? "2️⃣ Roblox 遊戲開發接案 & 社群推廣"
-            : "2️⃣ Roblox Game Development & Community",
+            ? "Roblox 遊戲開發與優化"
+            : "Roblox Game Development & Optimization",
           points: isZh
             ? [
-                "專注於遊戲系統、UI 互動、伺服器優化",
-                "與 VFX 藝術家合作，打造高品質遊戲體驗",
-                "持續參與 Roblox 開發者社群，提供技術交流與指導",
-                "推廣 Roblox 開發，讓更多台灣玩家與開發者認識這個平台",
+                "開發高效能遊戲系統，支持大規模多人互動",
+                "設計模組化架構，提升代碼可維護性",
+                "實現自動化測試流程，確保產品質量",
+                "優化遊戲性能，提升用戶體驗",
               ]
             : [
-                "Focus on game systems, UI interactions, and server optimization",
-                "Collaborate with VFX artists to create high-quality game experiences",
-                "Active participation in Roblox developer community, providing technical guidance",
-                "Promote Roblox development to make it more accessible to new developers",
-              ],
-        },
-        {
-          title: isZh
-            ? "3️⃣ C++ & Unreal Engine 5 學習中"
-            : "3️⃣ Learning C++ & Unreal Engine 5",
-          points: isZh
-            ? ["持續探索 3D 遊戲開發，為未來更多可能性做準備"]
-            : [
-                "Exploring 3D game development, preparing for more future possibilities",
+                "Developed high-performance game systems supporting massive multiplayer interactions",
+                "Designed modular architecture improving code maintainability",
+                "Implemented automated testing processes ensuring product quality",
+                "Optimized game performance enhancing user experience",
               ],
         },
       ],
     },
     collaboration: {
       title: isZh
-        ? `${emoji.mission} 期待的合作`
-        : `${emoji.mission} Looking for Collaboration`,
+        ? `${emoji.mission} 合作領域`
+        : `${emoji.mission} Collaboration Areas`,
       points: isZh
         ? [
-            "Roblox 遊戲開發（腳本、系統設計、伺服器優化）",
-            "網站開發（個人網站、作品集、前端設計）",
-            "技術分享 & 教學（Roblox 腳本開發、全端開發基礎）",
-            "Roblox 社群推廣 & 影響力打造（教育、開發者扶植）",
+            "Roblox 遊戲系統開發與性能優化",
+            "網頁應用開發與技術架構設計",
+            "開發團隊技術培訓與指導",
+            "遊戲開發社群建設與運營",
           ]
         : [
-            "Roblox Game Development (Scripting, System Design, Server Optimization)",
-            "Web Development (Personal Websites, Portfolios, Frontend Design)",
-            "Technical Sharing & Teaching (Roblox Scripting, Full-Stack Basics)",
-            "Roblox Community Building & Impact Creation (Education, Developer Support)",
+            "Roblox Game System Development & Optimization",
+            "Web Application Development & Architecture Design",
+            "Development Team Training & Mentoring",
+            "Game Development Community Building & Operation",
           ],
     },
     contact: {
-      title: isZh ? `${emoji.contact} 聯絡方式` : `${emoji.contact} Contact Me`,
+      title: isZh
+        ? `${emoji.contact} 聯絡資訊`
+        : `${emoji.contact} Contact Info`,
       subtitle: isZh
-        ? "如果你正在尋找一位具備創意、技術實力，並樂於分享與成長的開發者，歡迎與我聯繫！"
-        : "If you're looking for a creative, technically skilled developer who loves to share and grow, feel free to contact me!",
+        ? "期待與您討論技術合作機會，一起打造優秀的作品！"
+        : "Looking forward to discussing technical collaboration opportunities and creating outstanding projects together!",
       items: [
         {
           icon: emoji.email,
@@ -192,42 +177,69 @@ export default function CVPage() {
       ],
     },
     footer: isZh
-      ? `讓我們一起打造更棒的作品，推動 Roblox 在台灣的發展！${emoji.rocket}`
-      : `Let's create amazing projects together and drive Roblox development forward! ${emoji.rocket}`,
+      ? `用技術與創意，為遊戲開發注入新活力！${emoji.rocket}`
+      : `Energizing Game Development with Technology and Creativity! ${emoji.rocket}`,
   };
+
+  const cardBaseStyle =
+    "overflow-hidden rounded-xl border border-neutral-200 bg-[var(--card-bg)] shadow-sm dark:border-neutral-800";
 
   return (
     <motion.div
       initial="hidden"
       animate="show"
       variants={container}
-      className="container mx-auto max-w-2xl px-6 py-12 [--card-bg:theme(colors.white/80)] dark:[--card-bg:theme(colors.neutral.900/80)]"
+      className="container mx-auto max-w-2xl px-6 py-12 [--card-bg:theme(colors.white/90)] dark:[--card-bg:theme(colors.neutral.900/80)]"
     >
       <article className="prose prose-neutral dark:prose-invert">
         <motion.div variants={item} className="mb-12 text-center">
-          <h1 className="mb-6 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl">
+          <h1 className="mb-6 bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl">
             {content.title}
           </h1>
-          <div className="text-xl font-medium tracking-wide text-neutral-600 dark:text-neutral-400">
-            {content.roles.join(" | ")}
+          <div className="flex flex-wrap items-center justify-center gap-3 text-lg font-medium text-neutral-700 dark:text-neutral-400">
+            {content.roles.map((role, index) => (
+              <React.Fragment key={index}>
+                <span className="flex items-center gap-2">
+                  <span className="shrink-0">{role.split(" ")[0]}</span>
+                  <span>{role.split(" ").slice(1).join(" ")}</span>
+                </span>
+                {index < content.roles.length - 1 && (
+                  <span className="text-neutral-400 dark:text-neutral-600">
+                    |
+                  </span>
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </motion.div>
 
         <motion.div
           variants={item}
-          className="mb-12 rounded-xl bg-[var(--card-bg)] p-6"
+          className="mb-12 overflow-hidden rounded-xl border border-neutral-200 bg-[var(--card-bg)] p-6 shadow-sm dark:border-neutral-800"
         >
-          <div className="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-            {content.intro}
+          <div className="space-y-2 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
+            {content.intro
+              .split("。")
+              .filter(Boolean)
+              .map((sentence, index) => (
+                <p key={index}>{sentence}。</p>
+              ))}
           </div>
         </motion.div>
 
         <motion.section variants={item} className="mb-12">
-          <h2 className="mb-6 text-center text-2xl font-bold">
+          <h2 className="mb-6 text-center text-2xl font-bold text-neutral-800 dark:text-neutral-200">
             {content.mission.title}
           </h2>
-          <div className="rounded-lg border border-neutral-200 bg-white/80 p-6 dark:border-neutral-800 dark:bg-neutral-900/80">
-            {content.mission.content}
+          <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[var(--card-bg)] p-6 shadow-sm dark:border-neutral-800">
+            <div className="space-y-2 leading-relaxed text-neutral-600 dark:text-neutral-400">
+              {content.mission.content
+                .split("。")
+                .filter(Boolean)
+                .map((sentence, index) => (
+                  <p key={index}>{sentence}。</p>
+                ))}
+            </div>
           </div>
         </motion.section>
 
@@ -237,17 +249,16 @@ export default function CVPage() {
           </h2>
           <div className="grid gap-4">
             {content.whyMe.points.map((point, index) => (
-              <div
-                key={index}
-                className="rounded-lg border border-neutral-200 bg-white/50 p-6 dark:border-neutral-800 dark:bg-neutral-900/50"
-              >
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 text-green-500">{emoji.check}</span>
+              <div key={index} className={`${cardBaseStyle} p-6`}>
+                <div className="flex items-center gap-3">
+                  <span className="shrink-0 text-emerald-600 dark:text-green-500">
+                    {emoji.check}
+                  </span>
                   <div>
-                    <div className="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">
+                    <div className="mb-2 font-semibold tracking-wide text-neutral-800 dark:text-neutral-200">
                       {point.title}
                     </div>
-                    <div className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <div className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
                       {point.content}
                     </div>
                   </div>
@@ -263,23 +274,21 @@ export default function CVPage() {
           </h2>
           <div className="space-y-6">
             {content.projects.items.map((project, index) => (
-              <div
-                key={index}
-                className="overflow-hidden rounded-xl border border-neutral-200 bg-white/50 dark:border-neutral-800 dark:bg-neutral-900/50"
-              >
-                <div className="border-b border-neutral-200 bg-neutral-50/50 p-6 dark:border-neutral-800 dark:bg-neutral-900/50">
+              <div key={index} className={cardBaseStyle}>
+                <div className="border-b border-neutral-200 bg-neutral-100/50 p-6 dark:border-neutral-800 dark:bg-neutral-800/50">
                   <h3 className="text-xl font-semibold text-neutral-800 dark:text-neutral-200">
                     {project.title}
                   </h3>
                 </div>
                 <ul className="space-y-3 p-6">
                   {project.points.map((point, pIndex) => (
-                    <li
-                      key={pIndex}
-                      className="flex items-start gap-3 text-neutral-600 dark:text-neutral-400"
-                    >
-                      <span className="mt-1 text-blue-500">{emoji.dot}</span>
-                      <span>{point}</span>
+                    <li key={pIndex} className="flex items-center gap-3">
+                      <span className="shrink-0 text-blue-600 dark:text-blue-500">
+                        {emoji.dot}
+                      </span>
+                      <span className="leading-relaxed text-neutral-600 dark:text-neutral-400">
+                        {point}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -294,14 +303,13 @@ export default function CVPage() {
           </h2>
           <div className="grid gap-4">
             {content.collaboration.points.map((point, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 rounded-lg border border-neutral-200 bg-white/50 p-4 dark:border-neutral-800 dark:bg-neutral-900/50"
-              >
-                <span className="mt-1 text-green-500">✔</span>
-                <span className="text-neutral-600 dark:text-neutral-400">
-                  {point}
-                </span>
+              <div key={index} className={`${cardBaseStyle} p-4`}>
+                <div className="flex items-center gap-3">
+                  <span className="shrink-0 text-green-500">✔</span>
+                  <span className="leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    {point}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -327,9 +335,9 @@ export default function CVPage() {
                 }`}
                 target={item.label !== "Email" ? "_blank" : undefined}
                 rel={item.label !== "Email" ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white/50 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-300 dark:hover:bg-neutral-800/50"
+                className={`${cardBaseStyle} flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-neutral-700 transition-transform hover:scale-105 dark:text-neutral-300`}
               >
-                <span className="text-lg">{item.icon}</span>
+                <span className="shrink-0 text-lg">{item.icon}</span>
                 <span>{item.label === "Email" ? item.value : item.label}</span>
               </a>
             ))}
