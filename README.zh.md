@@ -115,26 +115,13 @@ NEXT_PUBLIC_FORMSPREE_ID=你的_Formspree_表單_ID
 
 ## 👤 作者
 
-- (Small R)
-- 信箱: hhgg12661@gmail.com
-- GitHub: [@Ynoob87](https://github.com/Ynoob87)
-- LinkedIn: [alaner652](https://www.linkedin.com/in/alaner652/)
+- Email: hhgg12661@gmail.com
+- GitHub: (https://github.com/Ynoob87)
+- LinkedIn: (https://www.linkedin.com/in/alaner652/)
 
 ## 📄 授權
 
 本專案使用 MIT 授權 - 詳見 [LICENSE](LICENSE) 檔案
-
-## 🤝 參與貢獻
-
-歡迎參與貢獻！在開始之前，請先閱讀我們的[貢獻指南](.github/CONTRIBUTING.md)和[行為準則](CODE_OF_CONDUCT.md)。
-
-### 貢獻方式
-
-- 回報 Bug 和問題
-- 提出新功能建議
-- 改善文檔
-- 提交 Pull Request
-- 分享這個專案
 
 ## 💖 支持專案
 

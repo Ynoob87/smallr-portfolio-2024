@@ -115,26 +115,13 @@ NEXT_PUBLIC_FORMSPREE_ID=your_formspree_form_id
 
 ## 👤 Author
 
-- (Small R)
 - Email: hhgg12661@gmail.com
-- GitHub: [@Ynoob87](https://github.com/Ynoob87)
-- LinkedIn: [alaner652](https://www.linkedin.com/in/alaner652/)
+- GitHub: (https://github.com/Ynoob87)
+- LinkedIn: (https://www.linkedin.com/in/alaner652/)
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read our [Contributing Guidelines](.github/CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) before getting started.
-
-### Ways to Contribute
-
-- Report bugs and issues
-- Suggest new features
-- Improve documentation
-- Submit pull requests
-- Share the project
 
 ## 💖 Support
 
