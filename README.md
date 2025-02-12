@@ -6,10 +6,6 @@
   </p>
   <p align="center">
     <a href="https://smallr-portfolio.vercel.app">Live Demo</a>
-    ·
-    <a href="#features">Features</a>
-    ·
-    <a href="#tech-stack">Tech Stack</a>
   </p>
   <img src="/public/preview.png" alt="Portfolio Preview" width="600px" />
 </div>

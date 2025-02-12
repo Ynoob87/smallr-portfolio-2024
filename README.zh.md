@@ -6,10 +6,6 @@
   </p>
   <p align="center">
     <a href="https://smallr-portfolio.vercel.app">預覽網站</a>
-    ·
-    <a href="#features">功能特色</a>
-    ·
-    <a href="#tech-stack">技術棧</a>
   </p>
   <img src="/public/preview.png" alt="Portfolio Preview" width="600px" />
 </div>
