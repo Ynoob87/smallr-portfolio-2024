@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import PreviewCard from "@/components/ui/PreviewCard";
 import { getTechIcon, TECH_ICONS } from "@/components/ui/TechIcons";
-import { useProjects } from "@/constants/sections/projects";
+import { useCategories, useProjects } from "@/constants/sections/projects";
 import { useTranslations } from "@/hooks/useTranslations";
 
 export default function Projects() {
@@ -16,14 +16,6 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [visibleCount, setVisibleCount] = useState(6);
   const initialCount = 6;
-
-  // 導出項目分類
-  const categories = [
-    { value: "all", label: t.categories.all },
-    { value: "web", label: t.categories.web },
-    { value: "roblox", label: "Roblox" },
-    { value: "unreal", label: "Unreal Engine" },
-  ];
 
   const filteredProjects = projects
     .filter((project) => {
@@ -64,7 +56,7 @@ export default function Projects() {
         </motion.h2>
 
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          {categories.map((category) => (
+          {useCategories().map((category) => (
             <button
               key={category.value}
               onClick={() => setSelectedCategory(category.value)}

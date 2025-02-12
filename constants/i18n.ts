@@ -68,6 +68,8 @@ export const translations: Record<"en" | "zh", Translation> = {
     categories: {
       all: "全部",
       web: "網頁開發",
+      roblox: "Roblox",
+      other: "其他",
     },
     contact: {
       title: "聯絡我",
@@ -166,6 +168,8 @@ export const translations: Record<"en" | "zh", Translation> = {
     categories: {
       all: "All",
       web: "Web Development",
+      roblox: "Roblox",
+      other: "Other",
     },
     contact: {
       title: "Get in Touch",

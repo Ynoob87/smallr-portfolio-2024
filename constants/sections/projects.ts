@@ -1,7 +1,7 @@
 import { useTranslations } from "@/hooks/useTranslations";
-import type { Project } from "@/types";
+import type { UseCategories, UseProject } from "@/types";
 
-export function useProjects(): Project[] {
+export function useProjects(): UseProject[] {
   const t = useTranslations();
 
   return [
@@ -76,5 +76,16 @@ export function useProjects(): Project[] {
       tags: ["Roblox", "Lua"],
       video: "1TGTTg14rSA",
     },
+  ];
+}
+
+export function useCategories(): UseCategories[] {
+  const t = useTranslations();
+
+  return [
+    { value: "all", label: t.categories.all },
+    { value: "web", label: t.categories.web },
+    { value: "roblox", label: t.categories.roblox },
+    { value: "unreal", label: t.categories.other },
   ];
 }

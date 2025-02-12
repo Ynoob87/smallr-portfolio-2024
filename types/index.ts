@@ -1,7 +1,7 @@
 import { LucideIcon } from "lucide-react";
 import { ReactNode } from "react";
 
-export interface Project {
+export interface UseProject {
   title: string;
   description: string;
   tags: string[];
@@ -12,6 +12,11 @@ export interface Project {
     demo?: string;
     github?: string;
   };
+}
+
+export interface UseCategories {
+  value: string;
+  label: string;
 }
 
 export interface NavItem {
@@ -92,6 +97,8 @@ export interface Translation {
   categories: {
     all: string;
     web: string;
+    roblox: string;
+    other: string;
   };
   contact: {
     title: string;

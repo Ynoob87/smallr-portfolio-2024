@@ -1,4 +1,3 @@
-// 技術分組 (關於頁面)
 export const techGroups = [
   {
     title: "Frontend",
