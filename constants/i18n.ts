@@ -10,7 +10,7 @@ export const translations: Record<"en" | "zh", Translation> = {
     hero: {
       greeting: "嗨，我是",
       roles: ["全端開發者", "UI/UX 愛好者", "解決方案開發者"] as const,
-      description: "熱衷於創造美觀且實用的網頁應用",
+      description: "熱衷於創造美觀且實用的工具",
       buttons: {
         github: "開源專案",
         linkedin: "與我聯絡",
@@ -107,8 +107,7 @@ export const translations: Record<"en" | "zh", Translation> = {
         "UI/UX Enthusiast",
         "Problem Solver",
       ] as const,
-      description:
-        "Passionate about creating beautiful, functional web applications",
+      description: "Passionate about creating beautiful and useful tools",
       buttons: {
         github: "Open Source Projects",
         linkedin: "Connect with me",
