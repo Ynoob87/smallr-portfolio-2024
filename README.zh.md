@@ -116,8 +116,8 @@ NEXT_PUBLIC_FORMSPREE_ID=你的_Formspree_表單_ID
 ## 👤 作者
 
 - Email: hhgg12661@gmail.com
-- GitHub: (https://github.com/Ynoob87)
-- LinkedIn: (https://www.linkedin.com/in/alaner652/)
+- GitHub: https://github.com/Ynoob87
+- LinkedIn: https://www.linkedin.com/in/alaner652/
 
 ## 📄 授權
 
