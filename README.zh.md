@@ -115,7 +115,7 @@ NEXT_PUBLIC_FORMSPREE_ID=你的_Formspree_表單_ID
 
 ## 👤 作者
 
-- 吳宸麒 (Small R)
+- (Small R)
 - 信箱: hhgg12661@gmail.com
 - GitHub: [@Ynoob87](https://github.com/Ynoob87)
 - LinkedIn: [alaner652](https://www.linkedin.com/in/alaner652/)
