@@ -107,7 +107,7 @@ npm run dev
 
 ## 📝 環境變數
 
-在根目錄建立 `.env.local` 檔案：
+在根目錄建立 `.env` 檔案：
 
 ```bash
 NEXT_PUBLIC_FORMSPREE_ID=你的_Formspree_表單_ID

@@ -107,7 +107,7 @@ npm run dev
 
 ## 📝 Environment Variables
 
-Create a `.env.local` file in the root directory:
+Create a `.env` file in the root directory:
 
 ```bash
 NEXT_PUBLIC_FORMSPREE_ID=your_formspree_form_id
