@@ -9,7 +9,7 @@ export const translations: Record<"en" | "zh", Translation> = {
     },
     hero: {
       greeting: "嗨，我是",
-      roles: ["全端開發者", "UI/UX 愛好者", "解決方案開發者"] as const,
+      roles: ["全端開發者", "遊戲開發者", "解決問題的人"] as const,
       description: "熱衷於創造美觀且實用的工具",
       buttons: {
         github: "開源專案",
@@ -21,7 +21,7 @@ export const translations: Record<"en" | "zh", Translation> = {
     },
     about: {
       title: "關於我",
-      description: "熱衷於創造有影響力的數位體驗",
+      description: "熱衷於創造實用且良好的用戶體驗",
       features: {
         fullstack: {
           title: "全端開發",
@@ -106,7 +106,7 @@ export const translations: Record<"en" | "zh", Translation> = {
       greeting: "Hi, I'm",
       roles: [
         "Full Stack Developer",
-        "UI/UX Enthusiast",
+        "Game Developer",
         "Problem Solver",
       ] as const,
       description: "Passionate about creating beautiful and useful tools",
@@ -121,7 +121,7 @@ export const translations: Record<"en" | "zh", Translation> = {
     about: {
       title: "About Me",
       description:
-        "A passionate developer focused on creating impactful digital experiences",
+        "Passionate about creating practical and good user experience",
       features: {
         fullstack: {
           title: "Full-Stack Development",
@@ -144,7 +144,7 @@ export const translations: Record<"en" | "zh", Translation> = {
             "4+ years of Roblox development experience using Lua/Luau, demonstrating versatility in different programming domains.",
         },
       },
-      
+
       techStack: "Tech Stack",
     },
     projects: {

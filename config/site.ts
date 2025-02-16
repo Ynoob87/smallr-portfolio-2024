@@ -1,6 +1,5 @@
 import type { SiteConfig } from "@/types";
 
-// 網站配置
 export const siteConfig: SiteConfig = {
   name: "Small R",
   url: "https://smallr-portfolio.vercel.app",
@@ -17,6 +16,8 @@ export const siteConfig: SiteConfig = {
     "web development",
     "frontend developer",
     "React",
+    "Python",
+    "C++",
     "Next.js",
     "TypeScript",
   ],
