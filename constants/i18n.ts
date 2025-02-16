@@ -144,6 +144,7 @@ export const translations: Record<"en" | "zh", Translation> = {
             "4+ years of Roblox development experience using Lua/Luau, demonstrating versatility in different programming domains.",
         },
       },
+      
       techStack: "Tech Stack",
     },
     projects: {
