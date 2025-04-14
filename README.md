@@ -84,7 +84,7 @@
 1. Clone the repository
 
 ```bash
-git clone https://github.com/Ynoob87/smallr-portfolio.git
+git clone https://github.com/Ynoob87/smallr-portfolio-2024
 ```
 
 2. Install dependencies
