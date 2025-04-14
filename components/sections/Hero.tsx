@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Sparkles, ChevronDown, FileText } from "lucide-react";
+import { ChevronDown, Code2, FileText, Sparkles } from "lucide-react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 import SocialLinks from "@/components/SocialLinks";
 import { siteConfig } from "@/config/site";
@@ -12,8 +11,6 @@ import { useTranslations } from "@/hooks/useTranslations";
 
 export default function Hero() {
   const t = useTranslations();
-  const pathname = usePathname();
-  const locale = pathname?.startsWith("/zh") ? "zh" : "en";
   const [text] = useTypewriter({
     words: [...t.hero.roles],
     loop: true,
@@ -100,7 +97,9 @@ export default function Hero() {
 
             {/* CV 按鈕 */}
             <motion.a
-              href={`/${locale}/cv`}
+              href="/CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-neutral-900 p-1 pr-5 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
